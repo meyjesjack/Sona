@@ -294,6 +294,8 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="afsec"><div class="aflabel">Genre</div><div class="achiprow" id="gchips"></div></div>
       <div class="afsec"><div class="aflabel">When</div><div class="achiprow" id="dchips"></div></div>
       <div class="afsec"><div class="aflabel">Price</div><div class="achiprow" id="pchips"></div></div>
+    <div class="afsec"><div class="aflabel">Distance</div><div class="achiprow" id="rchips"></div></div>
+    <div class="afsec"><div class="aflabel">Age requirement</div><div class="achiprow" id="agechips"></div></div>
     </div>
   </div>
   <div id="spotifybar" class="spotify-bar">
@@ -319,12 +321,16 @@ var GENRES=["All","Rock","Hip-Hop","Electronic","Jazz & Blues","Pop","R&B","Coun
 var GID={"Rock":"KnvZfZ7vAeA","Hip-Hop":"KnvZfZ7vAv1","Electronic":"KnvZfZ7vAvF","Jazz & Blues":"KnvZfZ7vAvd","Pop":"KnvZfZ7vAev","R&B":"KnvZfZ7vAee","Country":"KnvZfZ7vAv6","Classical":"KnvZfZ7vAeJ","Latin":"KnvZfZ7vAe6","Metal":"KnvZfZ7vAvt","Indie":"KnvZfZ7vAed","Folk":"KnvZfZ7vAvU"};
 var GC={"Rock":"#ff2d55","Hip-Hop":"#ff6b35","Electronic":"#00f5ff","Jazz & Blues":"#c77dff","Pop":"#ff85e1","R&B":"#ffd60a","Country":"#a8e063","Classical":"#e2d1c3","Latin":"#ff6b6b","Metal":"#adb5bd","Indie":"#74c69d","Folk":"#d4a373","All":"#ffffff","Local & Independent":"#ff9800","Music":"#ffffff"};
 var DATES=[{l:"This Week",d:7},{l:"This Month",d:30},{l:"3 Months",d:90},{l:"Any Time",d:365}];
-var ST={genre:"All",dateIdx:1,price:"All",events:[],page:0,hasMore:false,searched:false,showSaved:false,saved:(function(){try{return JSON.parse(localStorage.getItem("sona_saved")||"[]");}catch(e){return [];}})()};
+var ST={genre:"All",dateIdx:1,price:"All",radius:"50",age:"All",events:[],page:0,hasMore:false,searched:false,showSaved:false,saved:(function(){try{return JSON.parse(localStorage.getItem("sona_saved")||"[]");}catch(e){return [];}})()};
 var spToken=null,spArtists=[],spGenres=[];
 function saveSaved(){try{localStorage.setItem("sona_saved",JSON.stringify(ST.saved));}catch(e){}}
 function goApp(){document.getElementById("home").className="pg";document.getElementById("app").className="pg on";window.scrollTo(0,0);buildFilters();updateSavedBtn();}
 function goHome(){document.getElementById("app").className="pg";document.getElementById("home").className="pg on";window.scrollTo(0,0);}
-function buildFilters(){var gc=document.getElementById("gchips"),dc=document.getElementById("dchips"),pc=document.getElementById("pchips");if(!gc||!dc||!pc)return;gc.innerHTML=GENRES.map(function(g){var c=GC[g]||"#fff";return'<button class="achip'+(ST.genre===g?" on":"")+'" style="--cc:'+c+';--cb:'+c+'22" onclick="ST.genre=\''+g+'\';buildFilters()">'+g+'</button>';}).join("");dc.innerHTML=DATES.map(function(o,i){return'<button class="achip'+(ST.dateIdx===i?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.dateIdx='+i+';buildFilters()">'+o.l+'</button>';}).join("");pc.innerHTML=["All","Ticketed","Free"].map(function(p){return'<button class="achip'+(ST.price===p?" on":"")+'" style="--cc:#74c69d;--cb:#74c69d22" onclick="ST.price=\''+p+'\';renderEvents()">'+p+'</button>';}).join("");}
+function buildFilters(){var gc=document.getElementById("gchips"),dc=document.getElementById("dchips"),pc=document.getElementById("pchips");if(!gc||!dc||!pc)return;gc.innerHTML=GENRES.map(function(g){var c=GC[g]||"#fff";return'<button class="achip'+(ST.genre===g?" on":"")+'" style="--cc:'+c+';--cb:'+c+'22" onclick="ST.genre=\''+g+'\';buildFilters()">'+g+'</button>';}).join("");dc.innerHTML=DATES.map(function(o,i){return'<button class="achip'+(ST.dateIdx===i?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.dateIdx='+i+';buildFilters()">'+o.l+'</button>';}).join("");pc.innerHTML=["All","Ticketed","Free"].map(function(p){return'<button class="achip'+(ST.price===p?" on":"")+'" style="--cc:#74c69d;--cb:#74c69d22" onclick="ST.price=\''+p+'\';renderEvents()">'+p+'</button>';}
+  var rc=document.getElementById("rchips");
+  if(rc)rc.innerHTML=["5","10","25","50","100"].map(function(r){return'<button class="achip'+(ST.radius===r?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.radius=\''+r+'\';doSearch(0)">'+r+' mi</button>';}).join("");
+  var agec=document.getElementById("agechips");
+  if(agec)agec.innerHTML=["All","All Ages","18+","21+"].map(function(a){return'<button class="achip'+(ST.age===a?" on":"")+'" style="--cc:#c77dff;--cb:#c77dff22" onclick="ST.age=\''+a+'\';renderEvents()">'+a+'</button>';}).join("");}
 function normalizeEB(ev){var v=ev.venue||{},start=ev.start||{},isFree=ev.is_free;var minP=ev.ticket_availability&&ev.ticket_availability.minimum_ticket_price&&ev.ticket_availability.minimum_ticket_price.major_value;var maxP=ev.ticket_availability&&ev.ticket_availability.maximum_ticket_price&&ev.ticket_availability.maximum_ticket_price.major_value;return{id:"eb_"+ev.id,name:(ev.name&&ev.name.text)||"Untitled Event",source:"eventbrite",url:ev.url,images:ev.logo&&ev.logo.url?[{ratio:"16_9",width:600,url:ev.logo.url}]:[],dates:{start:{localDate:start.local&&start.local.split("T")[0],localTime:start.local&&start.local.split("T")[1]}},priceRanges:(!isFree&&minP)?[{min:parseFloat(minP),max:parseFloat(maxP||minP)}]:null,isFree:isFree,classifications:[{genre:{name:"Local & Independent"},segment:{name:"Music"}}],_embedded:{venues:[{name:v.name||"Venue TBA",city:{name:v.city||""},stateCode:v.region||""}]}};}
 function getPrice(e){if(e.isFree)return null;var p=e.priceRanges&&e.priceRanges[0];if(!p)return null;return p.min===p.max?"$"+Math.round(p.min):"$"+Math.round(p.min)+"–$"+Math.round(p.max);}
 function getVenue(e){return(e._embedded&&e._embedded.venues&&e._embedded.venues[0]&&e._embedded.venues[0].name)||"Venue TBA";}
@@ -342,11 +348,27 @@ async function doSearch(p){
   ST.searched=true;setBtnLoading(true);document.getElementById("errdiv").style.display="none";
   var now=new Date(),end=new Date();end.setDate(end.getDate()+DATES[ST.dateIdx].d);
   function fmt(d){return d.toISOString().split(".")[0]+"Z";}
-  var tp=new URLSearchParams({apikey:TM,keyword:loc,classificationName:"music",startDateTime:fmt(now),endDateTime:fmt(end),sort:"date,asc",size:12,page:p});
-  if(ST.genre!=="All"&&GID[ST.genre])tp.set("genreId",GID[ST.genre]);
+  // Try to geocode the location for radius search, fall back to keyword
+  var tmParams={apikey:TM,classificationName:"music",startDateTime:fmt(now),endDateTime:fmt(end),sort:"date,asc",size:20,page:p,countryCode:"US"};
+  if(ST.genre!=="All"&&GID[ST.genre])tmParams.genreId=GID[ST.genre];
+  // Use keyword for now, geocode added below
+  tmParams.keyword=loc;
+  var tp=new URLSearchParams(tmParams);
   var ep=new URLSearchParams({token:EB,"location.address":loc,"location.within":"50mi","categories":"103","start_date.range_start":fmt(now),"start_date.range_end":fmt(end),"expand":"venue,ticket_availability","page_size":10});
   try{
-    var results=await Promise.allSettled([fetch("https://app.ticketmaster.com/discovery/v2/events.json?"+tp),p===0?fetch("https://www.eventbriteapi.com/v3/events/search/?"+ep):Promise.resolve(null)]);
+    // Try to get lat/long for better radius search
+  var geoUrl="https://app.ticketmaster.com/discovery/v2/events.json?"+tp;
+  try {
+    var geoRes=await fetch("https://nominatim.openstreetmap.org/search?q="+encodeURIComponent(loc)+"&format=json&limit=1");
+    var geoData=await geoRes.json();
+    if(geoData&&geoData[0]){
+      var lat=geoData[0].lat,lng=geoData[0].lon;
+      var rp=new URLSearchParams({apikey:TM,classificationName:"music",startDateTime:fmt(now),endDateTime:fmt(end),sort:"date,asc",size:20,page:p,latlong:lat+","+lng,radius:ST.radius,unit:"miles"});
+      if(ST.genre!=="All"&&GID[ST.genre])rp.set("genreId",GID[ST.genre]);
+      geoUrl="https://app.ticketmaster.com/discovery/v2/events.json?"+rp;
+    }
+  }catch(e){}
+  var results=await Promise.allSettled([fetch(geoUrl),p===0?fetch("https://www.eventbriteapi.com/v3/events/search/?"+ep):Promise.resolve(null)]);
     var tmItems=[],hasMore=false;
     if(results[0].status==="fulfilled"&&results[0].value.ok){var td=await results[0].value.json();if(!td.fault){tmItems=td._embedded&&td._embedded.events||[];hasMore=(p+1)<((td.page&&td.page.totalPages)||0);}}
     var ebItems=[];
@@ -363,7 +385,18 @@ async function doSearch(p){
 function renderEvents(){
   var grid=document.getElementById("griddiv"),hdr=document.getElementById("rhdrdiv"),st=document.getElementById("statediv"),lm=document.getElementById("lmbtn"),rc=document.getElementById("rcountdiv");
   var loc=document.getElementById("locinput").value.trim();
-  var src=ST.showSaved?ST.saved:ST.events.filter(function(e){if(ST.price==="Free"&&getPrice(e))return false;if(ST.price==="Ticketed"&&!getPrice(e))return false;return true;});
+  var src=ST.showSaved?ST.saved:ST.events.filter(function(e){
+    if(ST.price==="Free"&&getPrice(e))return false;
+    if(ST.price==="Ticketed"&&!getPrice(e))return false;
+    if(ST.age!=="All"){
+      var nm=(e.name||"").toLowerCase();
+      var hasAge=e.ageRestrictions&&e.ageRestrictions.legalAgeEnforced;
+      if(ST.age==="All Ages"&&hasAge)return false;
+      if(ST.age==="18+"&&nm.indexOf("18+")<0&&nm.indexOf("18 +")<0)return false;
+      if(ST.age==="21+"&&nm.indexOf("21+")<0&&nm.indexOf("21 +")<0)return false;
+    }
+    return true;
+  });
   if(src.length===0){grid.innerHTML="";hdr.style.display="none";lm.style.display="none";if(ST.showSaved)showState("★","No saved events yet","Star events to save them here");else if(ST.searched)showState("🔍","No events found","Try a broader search or different filters");else showState("🎸","Enter a city to get started","We'll find real upcoming shows near you");return;}
   st.style.display="none";hdr.style.display="flex";
   rc.innerHTML=ST.showSaved?"<strong>"+src.length+"</strong> saved event"+(src.length!==1?"s":""):"<strong>"+src.length+"</strong> event"+(src.length!==1?"s":"")+" near <strong style='color:#fafaf8'>"+loc+"</strong>";
@@ -380,7 +413,7 @@ function cardHTML(ev,idx){
   var url=getURL(ev);
   var matchTag=isSpotifyMatch(ev)?'<span class="match-badge">♫ YOUR TASTE</span>':"";
   var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
-  return'<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'+(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")+'<div class="acbody"><div class="actop"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div><div class="acright">'+(price?'<span class="acprice">'+price+'</span>':'<span class="acprice free">Free</span>')+'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button></div></div><h3 class="actitle">'+ev.name+'</h3><p class="acvenue">'+venue+(city?" · "+city:"")+'</p><p class="acdate">📅 '+date+(time?" · "+time:"")+'</p><div class="acblurb" id="blurb-'+ev.id+'"><span class="acblurbl">✦ loading insight...</span></div>'+(url?'<a class="accta" href="'+url+'" style="border-color:'+color+'44;color:'+color+'">'+(price?"Get Tickets →":"Event Details →")+'</a>':"")+'</div><div class="acglow" style="background:'+color+'"></div></div>';
+  return'<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'+(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")+'<div class="acbody"><div class="actop"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div><div class="acright">'+(price?'<span class="acprice">'+price+'</span>':(ev.isFree?'<span class="acprice free">Free</span>':'<span class="acprice">Check tickets</span>'))+'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button></div></div><h3 class="actitle">'+ev.name+'</h3><p class="acvenue">'+venue+(city?" · "+city:"")+'</p><p class="acdate">📅 '+date+(time?" · "+time:"")+'</p><div class="acblurb" id="blurb-'+ev.id+'"><span class="acblurbl">✦ loading insight...</span></div>'+(url?'<a class="accta" href="'+url+'" style="border-color:'+color+'44;color:'+color+'">'+(price?"Get Tickets →":"Event Details →")+'</a>':"")+'</div><div class="acglow" style="background:'+color+'"></div></div>';
 }
 async function loadBlurb(id,ev){
   var el=document.getElementById("blurb-"+id);if(!el)return;
