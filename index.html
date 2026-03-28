@@ -463,6 +463,9 @@ function isSpotifyMatch(ev){
       var bar=document.getElementById("spotifybar"),ac=document.getElementById("spotifyartists");
       if(bar&&ac){bar.className="spotify-bar on";ac.innerHTML=spArtists.slice(0,5).map(function(a){return'<span class="spotify-artist">'+a.charAt(0).toUpperCase()+a.slice(1)+'</span>';}).join("");}
       updateSpotifyBtn(true);
+      loadSpotifyData(spToken);
+    } else {
+      disconnectSpotify();
     }
   }
 })();
