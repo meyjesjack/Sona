@@ -11,6 +11,18 @@ html{scroll-behavior:smooth}
 body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 :root{--blk:#0a0a0a;--wht:#fafaf8;--g1:#f4f4f2;--g2:#e8e8e4;--g3:#b0b0a8;--g4:#606058;--grn:#2d6a4f;--grnl:#e8f4ed}
 
+
+/* SPOTIFY */
+.spotify-btn{display:flex;align-items:center;gap:8px;background:#1DB954;color:#fff;border:none;border-radius:100px;padding:8px 18px;font-family:'Geist',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.spotify-btn:hover{opacity:.85}
+.spotify-btn.connected{background:rgba(29,185,84,.15);color:#1DB954;border:1px solid rgba(29,185,84,.3)}
+.spotify-bar{max-width:1100px;margin:0 auto;padding:16px 24px;display:none}
+.spotify-bar.on{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.spotify-artists{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.spotify-artist{background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);color:#1DB954;font-size:12px;font-weight:500;padding:3px 12px;border-radius:100px;font-family:'Geist',sans-serif}
+.spotify-label{font-size:12px;color:rgba(255,255,255,.35);font-family:'Geist',sans-serif;margin-right:4px}
+.match-badge{display:inline-block;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.3);color:#1DB954;font-size:9px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle}
+
 /* ROUTER */
 .pg{display:none!important}
 .pg.on{display:block!important}
@@ -290,7 +302,8 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
   <nav class="anav">
     <span class="alogo" onclick="goHome()">Sona</span>
     <div class="anavr">
-      <div id="savedbtn" class="asavedbtn" onclick="toggleSaved()">★ Saved</div>
+      <button id="spotifybtn" class="spotify-btn" onclick="connectSpotify()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste</button>
+            <div id="savedbtn" class="asavedbtn" onclick="toggleSaved()">★ Saved</div>
       <button class="abackbtn" onclick="goHome()">← Back</button>
     </div>
   </nav>
@@ -313,7 +326,14 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="afsec"><div class="aflabel">Price</div><div class="achiprow" id="pchips"></div></div>
     </div>
   </div>
-  <div class="aresults">
+  <div id="spotifybar" class="spotify-bar">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <span class="spotify-label">Matching your taste in:</span>
+    <div id="spotifyartists" class="spotify-artists"></div>
+  </div>
+  <button class="spotify-btn connected" onclick="disconnectSpotify()">✓ Connected — Disconnect</button>
+</div>
+<div class="aresults">
     <div id="errdiv" class="aerr" style="display:none"></div>
     <div id="rhdrdiv" class="arhdr" style="display:none"><p class="arcount" id="rcountdiv"></p></div>
     <div id="griddiv" class="agrid"></div>
@@ -488,12 +508,12 @@ function cardHTML(ev,idx){
   var venue=getVenue(ev), city=getCity(ev), genre=getGenre(ev);
   var isSaved=!!ST.saved.find(function(s){ return s.id===ev.id; });
   var url=getURL(ev);
-  var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
+  var matchTag=isSpotifyMatch(ev)?'<span class="match-badge">♫ YOUR TASTE</span>':""; var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
   return '<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'
     +(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")
     +'<div class="acbody">'
     +'<div class="actop">'
-    +'<div style="display:flex;align-items:center"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+'</div>'
+    +'<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div>'
     +'<div class="acright">'
     +(price?'<span class="acprice">'+price+'</span>':'<span class="acprice free">Free</span>')
     +'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button>'
@@ -574,6 +594,104 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
     if(t){ e.preventDefault(); t.scrollIntoView({behavior:"smooth"}); }
   });
 });
+
+/* ── SPOTIFY ── */
+var SP_CLIENT = "079cf217cba04451a63f0b846dbe59d2";
+var SP_REDIRECT = "https://trysona.to/";
+var SP_SCOPES = "user-top-read";
+var spToken = localStorage.getItem("sp_token") || null;
+var spArtists = [];
+var spGenres = [];
+
+function connectSpotify(){
+  var state = Math.random().toString(36).substring(2);
+  localStorage.setItem("sp_state", state);
+  var url = "https://accounts.spotify.com/authorize"
+    + "?client_id=" + SP_CLIENT
+    + "&response_type=token"
+    + "&redirect_uri=" + encodeURIComponent(SP_REDIRECT)
+    + "&scope=" + encodeURIComponent(SP_SCOPES)
+    + "&state=" + state;
+  window.location.href = url;
+}
+
+function disconnectSpotify(){
+  localStorage.removeItem("sp_token");
+  localStorage.removeItem("sp_artists");
+  localStorage.removeItem("sp_genres");
+  spToken = null; spArtists = []; spGenres = [];
+  document.getElementById("spotifybar").className = "spotify-bar";
+  document.getElementById("spotifybtn").innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste';
+  document.getElementById("spotifybtn").className = "spotify-btn";
+  if(ST.searched) renderEvents();
+}
+
+async function loadSpotifyData(token){
+  try {
+    var res = await fetch("https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term", {
+      headers: { "Authorization": "Bearer " + token }
+    });
+    if(!res.ok) throw new Error("Spotify auth failed");
+    var data = await res.json();
+    var artists = data.items.map(function(a){ return a.name.toLowerCase(); });
+    var genres = [];
+    data.items.forEach(function(a){ a.genres.forEach(function(g){ if(genres.indexOf(g)<0) genres.push(g); }); });
+    spArtists = artists;
+    spGenres = genres;
+    localStorage.setItem("sp_artists", JSON.stringify(artists));
+    localStorage.setItem("sp_genres", JSON.stringify(genres));
+    showSpotifyBar(data.items.slice(0,5).map(function(a){ return a.name; }));
+    document.getElementById("spotifybtn").innerHTML = '✓ Taste matched';
+    document.getElementById("spotifybtn").className = "spotify-btn connected";
+    if(ST.searched) renderEvents();
+  } catch(e) {
+    console.error("Spotify error:", e);
+    disconnectSpotify();
+  }
+}
+
+function showSpotifyBar(artists){
+  var bar = document.getElementById("spotifybar");
+  var ac = document.getElementById("spotifyartists");
+  bar.className = "spotify-bar on";
+  ac.innerHTML = artists.map(function(a){ return '<span class="spotify-artist">'+a+'</span>'; }).join("");
+}
+
+function isSpotifyMatch(ev){
+  if(!spArtists.length && !spGenres.length) return false;
+  var name = (ev.name||"").toLowerCase();
+  var genre = getGenre(ev).toLowerCase();
+  for(var i=0;i<spArtists.length;i++){ if(name.indexOf(spArtists[i])>=0 || spArtists[i].indexOf(name)>=0) return true; }
+  for(var j=0;j<spGenres.length;j++){ if(genre.indexOf(spGenres[j])>=0 || spGenres[j].indexOf(genre)>=0) return true; }
+  return false;
+}
+
+// Handle Spotify OAuth callback
+(function(){
+  var hash = window.location.hash;
+  if(hash && hash.indexOf("access_token")>=0){
+    var params = {};
+    hash.substring(1).split("&").forEach(function(p){ var kv=p.split("="); params[kv[0]]=kv[1]; });
+    if(params.access_token){
+      spToken = params.access_token;
+      localStorage.setItem("sp_token", spToken);
+      window.location.hash = "";
+      goApp();
+      loadSpotifyData(spToken);
+    }
+  } else if(localStorage.getItem("sp_token")){
+    spToken = localStorage.getItem("sp_token");
+    spArtists = JSON.parse(localStorage.getItem("sp_artists")||"[]");
+    spGenres = JSON.parse(localStorage.getItem("sp_genres")||"[]");
+    if(spArtists.length){
+      var names = spArtists.slice(0,5).map(function(a){ return a.charAt(0).toUpperCase()+a.slice(1); });
+      showSpotifyBar(names);
+      document.getElementById("spotifybtn").innerHTML = "✓ Taste matched";
+      document.getElementById("spotifybtn").className = "spotify-btn connected";
+    }
+  }
+})();
+
 </script>
 </body>
 </html>
