@@ -427,6 +427,7 @@ async function loadSpotifyData(token){
     var res=await fetch("https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term",{headers:{"Authorization":"Bearer "+token}});
     if(res.status===401){var t=await refreshSpotifyToken();if(t){loadSpotifyData(t);return;}disconnectSpotify();return;}
     var data=await res.json();
+    if(!data.items||!data.items.length){disconnectSpotify();return;}
     var artists=data.items.map(function(a){return a.name.toLowerCase();});
     var genres=[];data.items.forEach(function(a){a.genres.forEach(function(g){if(genres.indexOf(g)<0)genres.push(g);});});
     spArtists=artists;spGenres=genres;
