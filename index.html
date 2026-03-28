@@ -10,9 +10,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 :root{--blk:#0a0a0a;--wht:#fafaf8;--g1:#f4f4f2;--g2:#e8e8e4;--g3:#b0b0a8;--g4:#606058;--grn:#2d6a4f;--grnl:#e8f4ed}
-
-
-/* SPOTIFY */
+.pg{display:none!important}.pg.on{display:block!important}
 .spotify-btn{display:flex;align-items:center;gap:8px;background:#1DB954;color:#fff;border:none;border-radius:100px;padding:8px 18px;font-family:'Geist',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s}
 .spotify-btn:hover{opacity:.85}
 .spotify-btn.connected{background:rgba(29,185,84,.15);color:#1DB954;border:1px solid rgba(29,185,84,.3)}
@@ -22,12 +20,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .spotify-artist{background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);color:#1DB954;font-size:12px;font-weight:500;padding:3px 12px;border-radius:100px;font-family:'Geist',sans-serif}
 .spotify-label{font-size:12px;color:rgba(255,255,255,.35);font-family:'Geist',sans-serif;margin-right:4px}
 .match-badge{display:inline-block;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.3);color:#1DB954;font-size:9px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle}
-
-/* ROUTER */
-.pg{display:none!important}
-.pg.on{display:block!important}
-
-/* ─── MARKETING ─── */
 #home{background:var(--wht);color:var(--blk)}
 .mnav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--g2)}
 .mlogo{font-family:'Instrument Serif',serif;font-size:22px;color:var(--blk);cursor:pointer;text-decoration:none}
@@ -47,8 +39,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .mbtn:hover{opacity:.75}
 .mbtn2{background:transparent;color:var(--blk);padding:14px 28px;border-radius:100px;font-size:15px;font-family:'Geist',sans-serif;border:1px solid var(--g2);cursor:pointer;transition:background .15s;text-decoration:none;display:inline-block}
 .mbtn2:hover{background:var(--g1)}
-
-/* MOCKUP */
 .mpreview{max-width:1100px;margin:0 auto 80px;padding:0 48px}
 .mwin{background:#0f0f18;border-radius:16px;overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;padding:28px}
 .mwinnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
@@ -64,8 +54,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .mwtitle{font-family:'Instrument Serif',serif;font-size:15px;color:#fafaf8;margin-bottom:3px}
 .mwsub{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:8px;font-family:'Geist',sans-serif}
 .mwblurb{font-size:10px;color:rgba(255,255,255,.4);line-height:1.5;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);font-family:'Geist',sans-serif}
-
-/* SECTIONS */
 .mdiv{height:1px;background:var(--g2);max-width:1100px;margin:0 auto}
 .msec{max-width:1100px;margin:0 auto;padding:72px 48px}
 .mslabel{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);margin-bottom:12px}
@@ -86,8 +74,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .mstat{padding:22px;border:1px solid var(--g2);border-radius:14px}
 .mstatn{font-family:'Instrument Serif',serif;font-size:38px;font-weight:400;color:var(--blk);line-height:1;margin-bottom:6px}
 .mstatl{font-size:13px;font-weight:300;color:var(--g4);line-height:1.5}
-
-/* WAITLIST */
 .mwl{background:var(--blk);padding:96px 48px;text-align:center}
 .mwli{max-width:560px;margin:0 auto}
 .mwlt{font-family:'Instrument Serif',serif;font-size:clamp(34px,5vw,56px);font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--wht);margin-bottom:14px}
@@ -104,8 +90,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .mfoot{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-top:1px solid var(--g2)}
 .mfootlogo{font-family:'Instrument Serif',serif;font-size:18px;color:var(--blk)}
 .mfootcopy{font-size:13px;color:var(--g3)}
-
-/* ─── APP ─── */
 #app{background:#080810;min-height:100vh;color:#e8e8f0}
 .anav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:56px;background:rgba(8,8,16,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
 .alogo{font-family:'Instrument Serif',serif;font-size:22px;color:#fafaf8;cursor:pointer}
@@ -173,7 +157,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 .aerr{background:rgba(255,45,85,.08);border:1px solid rgba(255,45,85,.25);border-radius:12px;padding:14px 20px;color:#ff6b7a;font-size:13px;text-align:center;max-width:500px;margin:0 auto 24px}
 .spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(8,8,16,.2);border-top-color:#080810;border-radius:50%;animation:sp .7s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
-
 @media(max-width:768px){
   .mnav,.anav{padding:0 20px}
   .mnav-links{display:none}
@@ -187,8 +170,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
 </style>
 </head>
 <body>
-
-<!-- ══ HOME ══ -->
 <div id="home" class="pg on">
   <nav class="mnav">
     <span class="mlogo" onclick="goApp()">Sona</span>
@@ -199,7 +180,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <button class="mcta" onclick="goApp()">Try the App →</button>
     </div>
   </nav>
-
   <section class="mhero">
     <div class="meyebrow">Now live</div>
     <h1 class="mtitle">Music events you'd <em>never</em><br>think to search for.</h1>
@@ -209,7 +189,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <a class="mbtn2" href="#how">See how it works</a>
     </div>
   </section>
-
   <div class="mpreview">
     <div class="mwin">
       <div class="mwinnav">
@@ -231,9 +210,7 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       </div>
     </div>
   </div>
-
   <div class="mdiv"></div>
-
   <section class="msec" id="how">
     <div class="mslabel">How it works</div>
     <h2 class="mstitle">Discovery that actually works.</h2>
@@ -244,9 +221,7 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="mstep"><div class="mstepn">03</div><div class="mstept">Get the inside angle</div><div class="mstepd">Every event gets an AI-written discovery tip — not marketing copy, but a genuine reason why you might love it.</div></div>
     </div>
   </section>
-
   <div class="mdiv"></div>
-
   <section class="msec" id="features">
     <div class="mslabel">Features</div>
     <h2 class="mstitle">Built for people who actually go to shows.</h2>
@@ -255,18 +230,16 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="mfeat"><div class="mficon">🗺</div><div class="mft">Real event data</div><div class="mfd">Powered by Ticketmaster and Eventbrite — not scraped listings or AI guesses. Actual shows, actual dates.</div></div>
       <div class="mfeat"><div class="mficon">✦</div><div class="mft">AI discovery blurbs</div><div class="mfd">Each event gets a one-sentence tip — like a recommendation from a friend who goes to everything.</div></div>
       <div class="mfeat"><div class="mficon">★</div><div class="mft">Save &amp; revisit</div><div class="mfd">Bookmark events you want to attend. Your list persists so nothing slips through the cracks.</div></div>
-      <div class="mfeat"><div class="mficon">🎚</div><div class="mft">Smart filters</div><div class="mfd">Genre, date range, free vs. ticketed — all in one place. Filter combinations that actually make sense.</div></div>
+      <div class="mfeat"><div class="mficon">🎚</div><div class="mft">Smart filters</div><div class="mfd">Genre, date range, free vs. ticketed — all in one place.</div></div>
     </div>
   </section>
-
   <div class="mdiv"></div>
-
   <section class="msec" id="market">
     <div class="mmkt">
       <div>
         <div class="mslabel">Why now</div>
         <h2 class="mstitle">A $30B market with a discovery problem.</h2>
-        <p class="mssub">Ticketmaster sells tickets. Spotify knows what you listen to. Nobody has connected the two in a way that surfaces the show you didn't know to look for. That's the gap Sona fills.</p>
+        <p class="mssub">Ticketmaster sells tickets. Spotify knows what you listen to. Nobody has connected the two to surface the show you didn't know to look for. That's the gap Sona fills.</p>
         <button class="mbtn" onclick="goApp()" style="margin-top:8px">Try it now →</button>
       </div>
       <div class="mstats">
@@ -277,7 +250,6 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       </div>
     </div>
   </section>
-
   <section class="mwl" id="waitlist">
     <div class="mwli">
       <h2 class="mwlt">Be first to<br><em>find your next show.</em></h2>
@@ -290,20 +262,18 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="mwlok" id="wlok">✓ You're on the list.</div>
     </div>
   </section>
-
   <footer class="mfoot">
     <div class="mfootlogo">Sona</div>
     <div class="mfootcopy">© 2026 Sona. Music discovery, reimagined.</div>
   </footer>
 </div>
 
-<!-- ══ APP ══ -->
 <div id="app" class="pg">
   <nav class="anav">
     <span class="alogo" onclick="goHome()">Sona</span>
     <div class="anavr">
       <button id="spotifybtn" class="spotify-btn" onclick="connectSpotify()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste</button>
-            <div id="savedbtn" class="asavedbtn" onclick="toggleSaved()">★ Saved</div>
+      <div id="savedbtn" class="asavedbtn" onclick="toggleSaved()">★ Saved</div>
       <button class="abackbtn" onclick="goHome()">← Back</button>
     </div>
   </nav>
@@ -313,8 +283,8 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
     <div class="aswrap">
       <div class="asbar">
         <span style="font-size:15px;opacity:.3">📍</span>
-        <input id="locinput" class="asinput" placeholder="City, zip code, or artist..." onkeydown="if(event.key==='Enter')search(0)"/>
-        <button id="searchbtn" class="asbtn" onclick="search(0)">Discover →</button>
+        <input id="locinput" class="asinput" placeholder="City, zip code, or artist..." onkeydown="if(event.key==='Enter')doSearch(0)"/>
+        <button id="searchbtn" class="asbtn" onclick="doSearch(0)">Discover →</button>
       </div>
     </div>
   </div>
@@ -327,1143 +297,174 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
     </div>
   </div>
   <div id="spotifybar" class="spotify-bar">
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <span class="spotify-label">Matching your taste in:</span>
-    <div id="spotifyartists" class="spotify-artists"></div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span class="spotify-label">Matching your taste in:</span>
+      <div id="spotifyartists" class="spotify-artists"></div>
+    </div>
+    <button class="spotify-btn connected" onclick="disconnectSpotify()">✓ Connected — Disconnect</button>
   </div>
-  <button class="spotify-btn connected" onclick="disconnectSpotify()">✓ Connected — Disconnect</button>
-</div>
-<div class="aresults">
+  <div class="aresults">
     <div id="errdiv" class="aerr" style="display:none"></div>
     <div id="rhdrdiv" class="arhdr" style="display:none"><p class="arcount" id="rcountdiv"></p></div>
     <div id="griddiv" class="agrid"></div>
     <div id="statediv" class="astate"><span class="asticon">🎸</span><h2>Enter a city to get started</h2><p>We'll find real upcoming shows near you</p></div>
-    <button id="lmbtn" class="almbtn" style="display:none" onclick="search(ST.page+1)">Load more shows</button>
+    <button id="lmbtn" class="almbtn" style="display:none" onclick="doSearch(ST.page+1)">Load more shows</button>
   </div>
 </div>
 
 <script>
-const TM = "wp7PBd9mOkqeqJlDpT9VzP5pnowABkit";
-const EB = "G3HY2EY5QNL4GFIDK6QP";
-
-const GENRES = ["All","Rock","Hip-Hop","Electronic","Jazz & Blues","Pop","R&B","Country","Classical","Latin","Metal","Indie","Folk"];
-const GID = {"Rock":"KnvZfZ7vAeA","Hip-Hop":"KnvZfZ7vAv1","Electronic":"KnvZfZ7vAvF","Jazz & Blues":"KnvZfZ7vAvd","Pop":"KnvZfZ7vAev","R&B":"KnvZfZ7vAee","Country":"KnvZfZ7vAv6","Classical":"KnvZfZ7vAeJ","Latin":"KnvZfZ7vAe6","Metal":"KnvZfZ7vAvt","Indie":"KnvZfZ7vAed","Folk":"KnvZfZ7vAvU"};
-const GC = {"Rock":"#ff2d55","Hip-Hop":"#ff6b35","Electronic":"#00f5ff","Jazz & Blues":"#c77dff","Pop":"#ff85e1","R&B":"#ffd60a","Country":"#a8e063","Classical":"#e2d1c3","Latin":"#ff6b6b","Metal":"#adb5bd","Indie":"#74c69d","Folk":"#d4a373","All":"#ffffff","Local & Independent":"#ff9800","Music":"#ffffff"};
-const DATES = [{l:"This Week",d:7},{l:"This Month",d:30},{l:"3 Months",d:90},{l:"Any Time",d:365}];
-
-var ST = {
-  genre:"All", dateIdx:1, price:"All",
-  events:[], page:0, hasMore:false,
-  searched:false, showSaved:false,
-  saved: (function(){ try{ return JSON.parse(localStorage.getItem("sona_saved")||"[]"); }catch(e){ return []; } })()
-};
-
-function saveSaved(){ try{ localStorage.setItem("sona_saved",JSON.stringify(ST.saved)); }catch(e){} }
-
-function goApp(){
-  document.getElementById("home").className = "pg";
-  document.getElementById("app").className = "pg on";
-  window.scrollTo(0,0);
-  buildFilters();
-  updateSavedBtn();
-}
-
-function goHome(){
-  document.getElementById("app").className = "pg";
-  document.getElementById("home").className = "pg on";
-  window.scrollTo(0,0);
-}
-
-function buildFilters(){
-  var gc = document.getElementById("gchips");
-  var dc = document.getElementById("dchips");
-  var pc = document.getElementById("pchips");
-  if(!gc||!dc||!pc) return;
-  gc.innerHTML = GENRES.map(function(g){ var c=GC[g]||"#fff"; return '<button class="achip'+(ST.genre===g?" on":"")+'" style="--cc:'+c+';--cb:'+c+'22" onclick="ST.genre=\''+g+'\';buildFilters()">'+g+'</button>'; }).join("");
-  dc.innerHTML = DATES.map(function(o,i){ return '<button class="achip'+(ST.dateIdx===i?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.dateIdx='+i+';buildFilters()">'+o.l+'</button>'; }).join("");
-  pc.innerHTML = ["All","Ticketed","Free"].map(function(p){ return '<button class="achip'+(ST.price===p?" on":"")+'" style="--cc:#74c69d;--cb:#74c69d22" onclick="ST.price=\''+p+'\';renderEvents()">'+p+'</button>'; }).join("");
-}
-
-function normalizeEB(ev){
-  var v=ev.venue||{}, start=ev.start||{}, isFree=ev.is_free;
-  var minP=ev.ticket_availability&&ev.ticket_availability.minimum_ticket_price&&ev.ticket_availability.minimum_ticket_price.major_value;
-  var maxP=ev.ticket_availability&&ev.ticket_availability.maximum_ticket_price&&ev.ticket_availability.maximum_ticket_price.major_value;
-  return {
-    id:"eb_"+ev.id, name:(ev.name&&ev.name.text)||"Untitled Event", source:"eventbrite", url:ev.url,
-    images: ev.logo&&ev.logo.url ? [{ratio:"16_9",width:600,url:ev.logo.url}] : [],
-    dates:{start:{localDate:start.local&&start.local.split("T")[0], localTime:start.local&&start.local.split("T")[1]}},
-    priceRanges: (!isFree&&minP) ? [{min:parseFloat(minP),max:parseFloat(maxP||minP)}] : null,
-    isFree:isFree,
-    classifications:[{genre:{name:"Local & Independent"},segment:{name:"Music"}}],
-    _embedded:{venues:[{name:v.name||"Venue TBA",city:{name:v.city||""},stateCode:v.region||""}]}
-  };
-}
-
-function getPrice(e){
-  if(e.isFree) return null;
-  var p=e.priceRanges&&e.priceRanges[0];
-  if(!p) return null;
-  return p.min===p.max ? "$"+Math.round(p.min) : "$"+Math.round(p.min)+"–$"+Math.round(p.max);
-}
-function getVenue(e){ return (e._embedded&&e._embedded.venues&&e._embedded.venues[0]&&e._embedded.venues[0].name)||"Venue TBA"; }
-function getCity(e){ var v=e._embedded&&e._embedded.venues&&e._embedded.venues[0]; return v?[v.city&&v.city.name,v.stateCode].filter(Boolean).join(", "):""; }
-function getImg(e){ var imgs=e.images||[]; var i=imgs.find(function(i){ return i.ratio==="16_9"&&i.width>500; })||imgs[0]; return i&&i.url||null; }
-function getGenre(e){ return (e.classifications&&e.classifications[0]&&(e.classifications[0].genre&&e.classifications[0].genre.name||e.classifications[0].segment&&e.classifications[0].segment.name))||"Music"; }
-function getColor(e){ var g=getGenre(e); for(var k in GC){ if(g.toLowerCase().indexOf(k.toLowerCase())>=0) return GC[k]; } return "#ffffff"; }
-function fmtDate(s){ if(!s) return "TBA"; try{ return new Date(s+"T12:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"}); }catch(e){ return s; } }
-function fmtTime(s){ if(!s) return null; try{ return new Date("1970-01-01T"+s).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"}); }catch(e){ return null; } }
-function getURL(e){
-  if(!e.url) return null;
-  try{ var u=new URL(e.url); var dest=u.searchParams.get("u"); return dest?decodeURIComponent(dest):e.url; }catch(ex){ return e.url; }
-}
-
-async function search(p){
-  var loc = document.getElementById("locinput").value.trim();
-  if(!loc){ document.getElementById("locinput").focus(); return; }
-  if(p===0){ ST.events=[]; ST.showSaved=false; updateSavedBtn(); }
-  ST.searched=true;
-  setBtnLoading(true);
-  document.getElementById("errdiv").style.display="none";
-
-  var now=new Date(), end=new Date();
-  end.setDate(end.getDate()+DATES[ST.dateIdx].d);
-  function fmt(d){ return d.toISOString().split(".")[0]+"Z"; }
-
+var TM="wp7PBd9mOkqeqJlDpT9VzP5pnowABkit",EB="G3HY2EY5QNL4GFIDK6QP";
+var SP_CLIENT="079cf217cba04451a63f0b846dbe59d2",SP_REDIRECT="https://trysona.to/",SP_SCOPES="user-top-read";
+var GENRES=["All","Rock","Hip-Hop","Electronic","Jazz & Blues","Pop","R&B","Country","Classical","Latin","Metal","Indie","Folk"];
+var GID={"Rock":"KnvZfZ7vAeA","Hip-Hop":"KnvZfZ7vAv1","Electronic":"KnvZfZ7vAvF","Jazz & Blues":"KnvZfZ7vAvd","Pop":"KnvZfZ7vAev","R&B":"KnvZfZ7vAee","Country":"KnvZfZ7vAv6","Classical":"KnvZfZ7vAeJ","Latin":"KnvZfZ7vAe6","Metal":"KnvZfZ7vAvt","Indie":"KnvZfZ7vAed","Folk":"KnvZfZ7vAvU"};
+var GC={"Rock":"#ff2d55","Hip-Hop":"#ff6b35","Electronic":"#00f5ff","Jazz & Blues":"#c77dff","Pop":"#ff85e1","R&B":"#ffd60a","Country":"#a8e063","Classical":"#e2d1c3","Latin":"#ff6b6b","Metal":"#adb5bd","Indie":"#74c69d","Folk":"#d4a373","All":"#ffffff","Local & Independent":"#ff9800","Music":"#ffffff"};
+var DATES=[{l:"This Week",d:7},{l:"This Month",d:30},{l:"3 Months",d:90},{l:"Any Time",d:365}];
+var ST={genre:"All",dateIdx:1,price:"All",events:[],page:0,hasMore:false,searched:false,showSaved:false,saved:(function(){try{return JSON.parse(localStorage.getItem("sona_saved")||"[]");}catch(e){return [];}})()};
+var spToken=null,spArtists=[],spGenres=[];
+function saveSaved(){try{localStorage.setItem("sona_saved",JSON.stringify(ST.saved));}catch(e){}}
+function goApp(){document.getElementById("home").className="pg";document.getElementById("app").className="pg on";window.scrollTo(0,0);buildFilters();updateSavedBtn();}
+function goHome(){document.getElementById("app").className="pg";document.getElementById("home").className="pg on";window.scrollTo(0,0);}
+function buildFilters(){var gc=document.getElementById("gchips"),dc=document.getElementById("dchips"),pc=document.getElementById("pchips");if(!gc||!dc||!pc)return;gc.innerHTML=GENRES.map(function(g){var c=GC[g]||"#fff";return'<button class="achip'+(ST.genre===g?" on":"")+'" style="--cc:'+c+';--cb:'+c+'22" onclick="ST.genre=\''+g+'\';buildFilters()">'+g+'</button>';}).join("");dc.innerHTML=DATES.map(function(o,i){return'<button class="achip'+(ST.dateIdx===i?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.dateIdx='+i+';buildFilters()">'+o.l+'</button>';}).join("");pc.innerHTML=["All","Ticketed","Free"].map(function(p){return'<button class="achip'+(ST.price===p?" on":"")+'" style="--cc:#74c69d;--cb:#74c69d22" onclick="ST.price=\''+p+'\';renderEvents()">'+p+'</button>';}).join("");}
+function normalizeEB(ev){var v=ev.venue||{},start=ev.start||{},isFree=ev.is_free;var minP=ev.ticket_availability&&ev.ticket_availability.minimum_ticket_price&&ev.ticket_availability.minimum_ticket_price.major_value;var maxP=ev.ticket_availability&&ev.ticket_availability.maximum_ticket_price&&ev.ticket_availability.maximum_ticket_price.major_value;return{id:"eb_"+ev.id,name:(ev.name&&ev.name.text)||"Untitled Event",source:"eventbrite",url:ev.url,images:ev.logo&&ev.logo.url?[{ratio:"16_9",width:600,url:ev.logo.url}]:[],dates:{start:{localDate:start.local&&start.local.split("T")[0],localTime:start.local&&start.local.split("T")[1]}},priceRanges:(!isFree&&minP)?[{min:parseFloat(minP),max:parseFloat(maxP||minP)}]:null,isFree:isFree,classifications:[{genre:{name:"Local & Independent"},segment:{name:"Music"}}],_embedded:{venues:[{name:v.name||"Venue TBA",city:{name:v.city||""},stateCode:v.region||""}]}};}
+function getPrice(e){if(e.isFree)return null;var p=e.priceRanges&&e.priceRanges[0];if(!p)return null;return p.min===p.max?"$"+Math.round(p.min):"$"+Math.round(p.min)+"–$"+Math.round(p.max);}
+function getVenue(e){return(e._embedded&&e._embedded.venues&&e._embedded.venues[0]&&e._embedded.venues[0].name)||"Venue TBA";}
+function getCity(e){var v=e._embedded&&e._embedded.venues&&e._embedded.venues[0];return v?[v.city&&v.city.name,v.stateCode].filter(Boolean).join(", "):"";}
+function getImg(e){var imgs=e.images||[];var i=imgs.find(function(i){return i.ratio==="16_9"&&i.width>500;})||imgs[0];return i&&i.url||null;}
+function getGenre(e){return(e.classifications&&e.classifications[0]&&(e.classifications[0].genre&&e.classifications[0].genre.name||e.classifications[0].segment&&e.classifications[0].segment.name))||"Music";}
+function getColor(e){var g=getGenre(e);for(var k in GC){if(g.toLowerCase().indexOf(k.toLowerCase())>=0)return GC[k];}return"#ffffff";}
+function fmtDate(s){if(!s)return"TBA";try{return new Date(s+"T12:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});}catch(e){return s;}}
+function fmtTime(s){if(!s)return null;try{return new Date("1970-01-01T"+s).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"});}catch(e){return null;}}
+function getURL(e){if(!e.url)return null;try{var u=new URL(e.url);var dest=u.searchParams.get("u");return dest?decodeURIComponent(dest):e.url;}catch(ex){return e.url;}}
+async function doSearch(p){
+  var loc=document.getElementById("locinput").value.trim();
+  if(!loc){document.getElementById("locinput").focus();return;}
+  if(p===0){ST.events=[];ST.showSaved=false;updateSavedBtn();}
+  ST.searched=true;setBtnLoading(true);document.getElementById("errdiv").style.display="none";
+  var now=new Date(),end=new Date();end.setDate(end.getDate()+DATES[ST.dateIdx].d);
+  function fmt(d){return d.toISOString().split(".")[0]+"Z";}
   var tp=new URLSearchParams({apikey:TM,keyword:loc,classificationName:"music",startDateTime:fmt(now),endDateTime:fmt(end),sort:"date,asc",size:12,page:p});
-  if(ST.genre!=="All"&&GID[ST.genre]) tp.set("genreId",GID[ST.genre]);
+  if(ST.genre!=="All"&&GID[ST.genre])tp.set("genreId",GID[ST.genre]);
   var ep=new URLSearchParams({token:EB,"location.address":loc,"location.within":"50mi","categories":"103","start_date.range_start":fmt(now),"start_date.range_end":fmt(end),"expand":"venue,ticket_availability","page_size":10});
-
   try{
-    var results = await Promise.allSettled([
-      fetch("https://app.ticketmaster.com/discovery/v2/events.json?"+tp),
-      p===0 ? fetch("https://www.eventbriteapi.com/v3/events/search/?"+ep) : Promise.resolve(null)
-    ]);
-
-    var tmItems=[], hasMore=false;
-    if(results[0].status==="fulfilled"&&results[0].value.ok){
-      var td=await results[0].value.json();
-      if(!td.fault){ tmItems=td._embedded&&td._embedded.events||[]; hasMore=(p+1)<((td.page&&td.page.totalPages)||0); }
-    }
-
+    var results=await Promise.allSettled([fetch("https://app.ticketmaster.com/discovery/v2/events.json?"+tp),p===0?fetch("https://www.eventbriteapi.com/v3/events/search/?"+ep):Promise.resolve(null)]);
+    var tmItems=[],hasMore=false;
+    if(results[0].status==="fulfilled"&&results[0].value.ok){var td=await results[0].value.json();if(!td.fault){tmItems=td._embedded&&td._embedded.events||[];hasMore=(p+1)<((td.page&&td.page.totalPages)||0);}}
     var ebItems=[];
-    if(p===0&&results[1].status==="fulfilled"&&results[1].value){
-      try{ var ed=await results[1].value.json(); ebItems=(ed.events||[]).map(normalizeEB); }catch(e){}
-    }
-
+    if(p===0&&results[1].status==="fulfilled"&&results[1].value){try{var ed=await results[1].value.json();ebItems=(ed.events||[]).map(normalizeEB);}catch(e){}}
     var merged=[];
-    if(p===0){
-      var max=Math.max(tmItems.length,ebItems.length);
-      for(var i=0;i<max;i++){ if(tmItems[i]) merged.push(tmItems[i]); if(ebItems[i]) merged.push(ebItems[i]); }
-    } else { merged=tmItems; }
-
-    if(p===0) ST.events=merged; else ST.events=ST.events.concat(merged);
-    ST.hasMore=hasMore; ST.page=p;
+    if(p===0){var max=Math.max(tmItems.length,ebItems.length);for(var i=0;i<max;i++){if(tmItems[i])merged.push(tmItems[i]);if(ebItems[i])merged.push(ebItems[i]);}}else{merged=tmItems;}
+    if(p===0)ST.events=merged;else ST.events=ST.events.concat(merged);
+    ST.hasMore=hasMore;ST.page=p;
     document.getElementById("filterwrap").style.display="block";
     renderEvents();
-  }catch(e){
-    document.getElementById("errdiv").textContent="⚠️ "+(e.message||"Couldn't load events");
-    document.getElementById("errdiv").style.display="block";
-    showState("🔍","Something went wrong","Check your connection and try again");
-  }
+  }catch(e){document.getElementById("errdiv").textContent="⚠️ "+(e.message||"Couldn't load events");document.getElementById("errdiv").style.display="block";showState("🔍","Something went wrong","Check your connection and try again");}
   setBtnLoading(false);
 }
-
 function renderEvents(){
-  var grid=document.getElementById("griddiv");
-  var hdr=document.getElementById("rhdrdiv");
-  var st=document.getElementById("statediv");
-  var lm=document.getElementById("lmbtn");
-  var rc=document.getElementById("rcountdiv");
+  var grid=document.getElementById("griddiv"),hdr=document.getElementById("rhdrdiv"),st=document.getElementById("statediv"),lm=document.getElementById("lmbtn"),rc=document.getElementById("rcountdiv");
   var loc=document.getElementById("locinput").value.trim();
-
-  var src = ST.showSaved ? ST.saved : ST.events.filter(function(e){
-    if(ST.price==="Free"&&getPrice(e)) return false;
-    if(ST.price==="Ticketed"&&!getPrice(e)) return false;
-    return true;
-  });
-
-  if(src.length===0){
-    grid.innerHTML=""; hdr.style.display="none"; lm.style.display="none";
-    if(ST.showSaved) showState("★","No saved events yet","Star events to save them here");
-    else if(ST.searched) showState("🔍","No events found","Try a broader search or different filters");
-    else showState("🎸","Enter a city to get started","We'll find real upcoming shows near you");
-    return;
-  }
-
-  st.style.display="none"; hdr.style.display="flex";
-  rc.innerHTML = ST.showSaved
-    ? "<strong>"+src.length+"</strong> saved event"+(src.length!==1?"s":"")
-    : "<strong>"+src.length+"</strong> event"+(src.length!==1?"s":"")+" near <strong style='color:#fafaf8'>"+loc+"</strong>";
-
-  grid.innerHTML = src.map(function(ev,i){ return cardHTML(ev,i); }).join("");
+  var src=ST.showSaved?ST.saved:ST.events.filter(function(e){if(ST.price==="Free"&&getPrice(e))return false;if(ST.price==="Ticketed"&&!getPrice(e))return false;return true;});
+  if(src.length===0){grid.innerHTML="";hdr.style.display="none";lm.style.display="none";if(ST.showSaved)showState("★","No saved events yet","Star events to save them here");else if(ST.searched)showState("🔍","No events found","Try a broader search or different filters");else showState("🎸","Enter a city to get started","We'll find real upcoming shows near you");return;}
+  st.style.display="none";hdr.style.display="flex";
+  rc.innerHTML=ST.showSaved?"<strong>"+src.length+"</strong> saved event"+(src.length!==1?"s":""):"<strong>"+src.length+"</strong> event"+(src.length!==1?"s":"")+" near <strong style='color:#fafaf8'>"+loc+"</strong>";
+  grid.innerHTML=src.map(function(ev,i){return cardHTML(ev,i);}).join("");
   lm.style.display=(!ST.showSaved&&ST.hasMore)?"block":"none";
-
-  src.forEach(function(ev,i){ setTimeout(function(){ loadBlurb(ev.id,ev); }, i*250+Math.random()*200); });
+  src.forEach(function(ev,i){setTimeout(function(){loadBlurb(ev.id,ev);},i*250+Math.random()*200);});
 }
-
 function cardHTML(ev,idx){
-  var color=getColor(ev), img=getImg(ev), price=getPrice(ev);
+  var color=getColor(ev),img=getImg(ev),price=getPrice(ev);
   var date=fmtDate(ev.dates&&ev.dates.start&&ev.dates.start.localDate);
   var time=fmtTime(ev.dates&&ev.dates.start&&ev.dates.start.localTime);
-  var venue=getVenue(ev), city=getCity(ev), genre=getGenre(ev);
-  var isSaved=!!ST.saved.find(function(s){ return s.id===ev.id; });
+  var venue=getVenue(ev),city=getCity(ev),genre=getGenre(ev);
+  var isSaved=!!ST.saved.find(function(s){return s.id===ev.id;});
   var url=getURL(ev);
-  var matchTag=isSpotifyMatch(ev)?'<span class="match-badge">♫ YOUR TASTE</span>':""; var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
-  return '<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'
-    +(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")
-    +'<div class="acbody">'
-    +'<div class="actop">'
-    +'<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div>'
-    +'<div class="acright">'
-    +(price?'<span class="acprice">'+price+'</span>':'<span class="acprice free">Free</span>')
-    +'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button>'
-    +'</div></div>'
-    +'<h3 class="actitle">'+ev.name+'</h3>'
-    +'<p class="acvenue">'+venue+(city?" · "+city:"")+'</p>'
-    +'<p class="acdate">📅 '+date+(time?" · "+time:"")+'</p>'
-    +'<div class="acblurb" id="blurb-'+ev.id+'"><span class="acblurbl">✦ loading insight...</span></div>'
-    +(url?'<a class="accta" href="'+url+'" style="border-color:'+color+'44;color:'+color+'">'+(price?"Get Tickets →":"Event Details →")+'</a>':"")
-    +'</div>'
-    +'<div class="acglow" style="background:'+color+'"></div>'
-    +'</div>';
+  var matchTag=isSpotifyMatch(ev)?'<span class="match-badge">♫ YOUR TASTE</span>':"";
+  var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
+  return'<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'+(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")+'<div class="acbody"><div class="actop"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div><div class="acright">'+(price?'<span class="acprice">'+price+'</span>':'<span class="acprice free">Free</span>')+'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button></div></div><h3 class="actitle">'+ev.name+'</h3><p class="acvenue">'+venue+(city?" · "+city:"")+'</p><p class="acdate">📅 '+date+(time?" · "+time:"")+'</p><div class="acblurb" id="blurb-'+ev.id+'"><span class="acblurbl">✦ loading insight...</span></div>'+(url?'<a class="accta" href="'+url+'" style="border-color:'+color+'44;color:'+color+'">'+(price?"Get Tickets →":"Event Details →")+'</a>':"")+'</div><div class="acglow" style="background:'+color+'"></div></div>';
 }
-
 async function loadBlurb(id,ev){
-  var el=document.getElementById("blurb-"+id);
-  if(!el) return;
-  try{
-    var res=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:80,
-        system:"Write ultra-short music event discovery tips. 1-2 sentences. Sound like a music-obsessed friend, not a marketer.",
-        messages:[{role:"user",content:"Discovery tip for: \""+ev.name+"\" ("+getGenre(ev)+") at "+getVenue(ev)+". Why would someone who didn't know about it love it?"}]})
-    });
-    var data=await res.json();
-    var text=data.content&&data.content[0]&&data.content[0].text;
-    if(text&&document.getElementById("blurb-"+id)) document.getElementById("blurb-"+id).innerHTML="✦ "+text;
-  }catch(e){ var el2=document.getElementById("blurb-"+id); if(el2) el2.innerHTML=""; }
+  var el=document.getElementById("blurb-"+id);if(!el)return;
+  try{var res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:80,system:"Write ultra-short music event discovery tips. 1-2 sentences. Sound like a music-obsessed friend, not a marketer.",messages:[{role:"user",content:"Discovery tip for: \""+ev.name+"\" ("+getGenre(ev)+") at "+getVenue(ev)+". Why would someone who didn't know about it love it?"}]})});var data=await res.json();var text=data.content&&data.content[0]&&data.content[0].text;if(text&&document.getElementById("blurb-"+id))document.getElementById("blurb-"+id).innerHTML="✦ "+text;}catch(e){var el2=document.getElementById("blurb-"+id);if(el2)el2.innerHTML="";}
 }
+function toggleSave(id){var ev=ST.events.find(function(e){return e.id===id;})||ST.saved.find(function(e){return e.id===id;});if(!ev)return;var exists=!!ST.saved.find(function(e){return e.id===id;});ST.saved=exists?ST.saved.filter(function(e){return e.id!==id;}):ST.saved.concat([ev]);saveSaved();updateSavedBtn();var btn=document.querySelector("#card-"+id+" .acsave");if(btn){btn.textContent=exists?"☆":"★";if(exists)btn.classList.remove("on");else btn.classList.add("on");}if(ST.showSaved)renderEvents();}
+function toggleSaved(){ST.showSaved=!ST.showSaved;updateSavedBtn();renderEvents();}
+function updateSavedBtn(){var btn=document.getElementById("savedbtn");if(!btn)return;var c=ST.saved.length;btn.className="asavedbtn"+(ST.showSaved?" on":"");btn.innerHTML="★ Saved"+(c>0?' <span class="abadge">'+c+"</span>":"");}
+function showState(icon,title,sub){var st=document.getElementById("statediv");if(!st)return;st.style.display="block";st.innerHTML='<span class="asticon">'+icon+'</span><h2>'+title+'</h2><p>'+sub+'</p>';document.getElementById("griddiv").innerHTML="";document.getElementById("rhdrdiv").style.display="none";document.getElementById("lmbtn").style.display="none";}
+function setBtnLoading(on){var btn=document.getElementById("searchbtn");if(!btn)return;btn.disabled=on;btn.innerHTML=on?'<span class="spin"></span>':"Discover →";}
+function joinWL(){var inp=document.getElementById("wlemail");var ok=document.getElementById("wlok");if(!inp.value||inp.value.indexOf("@")<0){inp.style.borderColor="rgba(255,80,80,.5)";setTimeout(function(){inp.style.borderColor="";},1000);return;}document.querySelector(".mwlf").style.display="none";ok.className="mwlok on";}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){var t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}});});
 
-function toggleSave(id){
-  var ev=ST.events.find(function(e){ return e.id===id; })||ST.saved.find(function(e){ return e.id===id; });
-  if(!ev) return;
-  var exists=!!ST.saved.find(function(e){ return e.id===id; });
-  ST.saved=exists?ST.saved.filter(function(e){ return e.id!==id; }):ST.saved.concat([ev]);
-  saveSaved(); updateSavedBtn();
-  var btn=document.querySelector("#card-"+id+" .acsave");
-  if(btn){ btn.textContent=exists?"☆":"★"; if(exists) btn.classList.remove("on"); else btn.classList.add("on"); }
-  if(ST.showSaved) renderEvents();
-}
-
-function toggleSaved(){ ST.showSaved=!ST.showSaved; updateSavedBtn(); renderEvents(); }
-
-function updateSavedBtn(){
-  var btn=document.getElementById("savedbtn"); if(!btn) return;
-  var c=ST.saved.length;
-  btn.className="asavedbtn"+(ST.showSaved?" on":"");
-  btn.innerHTML="★ Saved"+(c>0?' <span class="abadge">'+c+"</span>":"");
-}
-
-function showState(icon,title,sub){
-  var st=document.getElementById("statediv"); if(!st) return;
-  st.style.display="block";
-  st.innerHTML='<span class="asticon">'+icon+'</span><h2>'+title+'</h2><p>'+sub+'</p>';
-  document.getElementById("griddiv").innerHTML="";
-  document.getElementById("rhdrdiv").style.display="none";
-  document.getElementById("lmbtn").style.display="none";
-}
-
-function setBtnLoading(on){
-  var btn=document.getElementById("searchbtn"); if(!btn) return;
-  btn.disabled=on;
-  btn.innerHTML=on?'<span class="spin"></span>':"Discover →";
-}
-
-function joinWL(){
-  var inp=document.getElementById("wlemail");
-  var ok=document.getElementById("wlok");
-  if(!inp.value||inp.value.indexOf("@")<0){ inp.style.borderColor="rgba(255,80,80,.5)"; setTimeout(function(){ inp.style.borderColor=""; },1000); return; }
-  document.querySelector(".mwlf").style.display="none";
-  ok.className="mwlok on";
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener("click",function(e){
-    var t=document.querySelector(a.getAttribute("href"));
-    if(t){ e.preventDefault(); t.scrollIntoView({behavior:"smooth"}); }
-  });
-});
-
-/* ── SPOTIFY PKCE ── */
-var SP_CLIENT = "079cf217cba04451a63f0b846dbe59d2";
-var SP_REDIRECT = "https://trysona.to/";
-var SP_SCOPES = "user-top-read";
-var spToken = null;
-var spArtists = [];
-var spGenres = [];
-
-function b64url(buf){
-  return btoa(String.fromCharCode.apply(null,new Uint8Array(buf)))
-    .replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-}
-
+/* SPOTIFY PKCE */
+function b64url(buf){return btoa(String.fromCharCode.apply(null,new Uint8Array(buf))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
 async function connectSpotify(){
-  var verifier = b64url(crypto.getRandomValues(new Uint8Array(32)));
-  localStorage.setItem("sp_verifier", verifier);
-  var hashed = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier));
-  var challenge = b64url(hashed);
-  var state = b64url(crypto.getRandomValues(new Uint8Array(8)));
-  localStorage.setItem("sp_state", state);
-  var url = "https://accounts.spotify.com/authorize"
-    + "?client_id=" + SP_CLIENT
-    + "&response_type=code"
-    + "&redirect_uri=" + encodeURIComponent(SP_REDIRECT)
-    + "&scope=" + encodeURIComponent(SP_SCOPES)
-    + "&state=" + state
-    + "&code_challenge_method=S256"
-    + "&code_challenge=" + challenge;
-  window.location.href = url;
+  var verifier=b64url(crypto.getRandomValues(new Uint8Array(32)));
+  localStorage.setItem("sp_verifier",verifier);
+  var hashed=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(verifier));
+  var challenge=b64url(hashed);
+  var state=b64url(crypto.getRandomValues(new Uint8Array(8)));
+  localStorage.setItem("sp_state",state);
+  window.location.href="https://accounts.spotify.com/authorize?client_id="+SP_CLIENT+"&response_type=code&redirect_uri="+encodeURIComponent(SP_REDIRECT)+"&scope="+encodeURIComponent(SP_SCOPES)+"&state="+state+"&code_challenge_method=S256&code_challenge="+challenge;
 }
-
 function disconnectSpotify(){
-  ["sp_token","sp_artists","sp_genres","sp_verifier","sp_state"].forEach(function(k){ localStorage.removeItem(k); });
-  spToken = null; spArtists = []; spGenres = [];
-  document.getElementById("spotifybar").className = "spotify-bar";
+  ["sp_token","sp_refresh","sp_artists","sp_genres","sp_verifier","sp_state"].forEach(function(k){localStorage.removeItem(k);});
+  spToken=null;spArtists=[];spGenres=[];
+  document.getElementById("spotifybar").className="spotify-bar";
   updateSpotifyBtn(false);
-  if(ST.searched) renderEvents();
+  if(ST.searched)renderEvents();
 }
-
-function updateSpotifyBtn(connected){
-  var btn = document.getElementById("spotifybtn");
-  if(!btn) return;
-  if(connected){
-    btn.innerHTML = "✓ Taste matched";
-    btn.className = "spotify-btn connected";
-  } else {
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste';
-    btn.className = "spotify-btn";
-  }
+function updateSpotifyBtn(on){
+  var btn=document.getElementById("spotifybtn");if(!btn)return;
+  if(on){btn.innerHTML="✓ Taste matched";btn.className="spotify-btn connected";}
+  else{btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste';btn.className="spotify-btn";}
 }
-
 async function refreshSpotifyToken(){
-  var refresh = localStorage.getItem("sp_refresh");
-  if(!refresh) { disconnectSpotify(); return null; }
-  try {
-    var r = await fetch("https://accounts.spotify.com/api/token", {
-      method:"POST",
-      headers:{"Content-Type":"application/x-www-form-urlencoded"},
-      body: new URLSearchParams({
-        grant_type:"refresh_token",
-        refresh_token:refresh,
-        client_id:SP_CLIENT
-      })
-    });
-    var d = await r.json();
-    if(d.access_token){
-      spToken = d.access_token;
-      localStorage.setItem("sp_token", spToken);
-      if(d.refresh_token) localStorage.setItem("sp_refresh", d.refresh_token);
-      return spToken;
-    }
-  } catch(e){ console.error("Refresh error:", e); }
-  disconnectSpotify(); return null;
+  var refresh=localStorage.getItem("sp_refresh");if(!refresh){disconnectSpotify();return null;}
+  try{var r=await fetch("https://accounts.spotify.com/api/token",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({grant_type:"refresh_token",refresh_token:refresh,client_id:SP_CLIENT})});var d=await r.json();if(d.access_token){spToken=d.access_token;localStorage.setItem("sp_token",spToken);if(d.refresh_token)localStorage.setItem("sp_refresh",d.refresh_token);return spToken;}}catch(e){console.error("Refresh error:",e);}
+  disconnectSpotify();return null;
 }
-
 async function loadSpotifyData(token){
-  try {
-    var res = await fetch("https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term", {
-      headers: { "Authorization": "Bearer " + token }
-    });
-    if(res.status === 401){
-      var newToken = await refreshSpotifyToken();
-      if(newToken){ loadSpotifyData(newToken); return; }
-      disconnectSpotify(); return;
-    }
-    var data = await res.json();
-    var artists = data.items.map(function(a){ return a.name.toLowerCase(); });
-    var genres = [];
-    data.items.forEach(function(a){ a.genres.forEach(function(g){ if(genres.indexOf(g)<0) genres.push(g); }); });
-    spArtists = artists; spGenres = genres;
-    localStorage.setItem("sp_artists", JSON.stringify(artists));
-    localStorage.setItem("sp_genres", JSON.stringify(genres));
-    showSpotifyBar(data.items.slice(0,5).map(function(a){ return a.name; }));
-    updateSpotifyBtn(true);
-    if(ST.searched) renderEvents();
-  } catch(e){ console.error("Spotify error:", e); disconnectSpotify(); }
-}
-
-function showSpotifyBar(artists){
-  var bar = document.getElementById("spotifybar");
-  var ac = document.getElementById("spotifyartists");
-  if(!bar||!ac) return;
-  bar.className = "spotify-bar on";
-  ac.innerHTML = artists.map(function(a){ return '<span class="spotify-artist">'+a+'</span>'; }).join("");
-}
-
-function isSpotifyMatch(ev){
-  if(!spArtists.length && !spGenres.length) return false;
-  var name = (ev.name||"").toLowerCase();
-  var genre = getGenre(ev).toLowerCase();
-  for(var i=0;i<spArtists.length;i++){ if(name.indexOf(spArtists[i])>=0||spArtists[i].indexOf(name)>=0) return true; }
-  for(var j=0;j<spGenres.length;j++){ if(genre.indexOf(spGenres[j])>=0||spGenres[j].indexOf(genre)>=0) return true; }
-  return false;
-}
-
-// Handle OAuth callback & restore session
-(async function(){
-  var urlParams = new URLSearchParams(window.location.search);
-  var code = urlParams.get("code");
-  if(code){
-    window.history.replaceState({}, document.title, window.location.pathname);
-    var verifier = localStorage.getItem("sp_verifier");
-    try {
-      var r = await fetch("https://accounts.spotify.com/api/token", {
-        method:"POST",
-        headers:{"Content-Type":"application/x-www-form-urlencoded"},
-        body: new URLSearchParams({
-          grant_type:"authorization_code",
-          code:code,
-          redirect_uri:SP_REDIRECT,
-          client_id:SP_CLIENT,
-          code_verifier:verifier
-        })
-      });
-      var d = await r.json();
-      if(d.access_token){
-        spToken = d.access_token;
-        localStorage.setItem("sp_token", spToken);
-        if(d.refresh_token) localStorage.setItem("sp_refresh", d.refresh_token);
-        goApp();
-        loadSpotifyData(spToken);
-      }
-    } catch(e){ console.error("Token exchange error:", e); }
-  } else if(localStorage.getItem("sp_token")){
-    spToken = localStorage.getItem("sp_token");
-    spArtists = JSON.parse(localStorage.getItem("sp_artists")||"[]");
-    spGenres = JSON.parse(localStorage.getItem("sp_genres")||"[]");
-    if(spArtists.length){
-      var names = spArtists.slice(0,5).map(function(a){ return a.charAt(0).toUpperCase()+a.slice(1); });
-      showSpotifyBar(names);
-      updateSpotifyBtn(true);
-    }
-  }
-})();YPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sona — Music Discovery</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
-:root{--blk:#0a0a0a;--wht:#fafaf8;--g1:#f4f4f2;--g2:#e8e8e4;--g3:#b0b0a8;--g4:#606058;--grn:#2d6a4f;--grnl:#e8f4ed}
-
-
-/* SPOTIFY */
-.spotify-btn{display:flex;align-items:center;gap:8px;background:#1DB954;color:#fff;border:none;border-radius:100px;padding:8px 18px;font-family:'Geist',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s}
-.spotify-btn:hover{opacity:.85}
-.spotify-btn.connected{background:rgba(29,185,84,.15);color:#1DB954;border:1px solid rgba(29,185,84,.3)}
-.spotify-bar{max-width:1100px;margin:0 auto;padding:16px 24px;display:none}
-.spotify-bar.on{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.spotify-artists{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.spotify-artist{background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);color:#1DB954;font-size:12px;font-weight:500;padding:3px 12px;border-radius:100px;font-family:'Geist',sans-serif}
-.spotify-label{font-size:12px;color:rgba(255,255,255,.35);font-family:'Geist',sans-serif;margin-right:4px}
-.match-badge{display:inline-block;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.3);color:#1DB954;font-size:9px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle}
-
-/* ROUTER */
-.pg{display:none!important}
-.pg.on{display:block!important}
-
-/* ─── MARKETING ─── */
-#home{background:var(--wht);color:var(--blk)}
-.mnav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(250,250,248,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--g2)}
-.mlogo{font-family:'Instrument Serif',serif;font-size:22px;color:var(--blk);cursor:pointer;text-decoration:none}
-.mnav-links{display:flex;gap:28px;align-items:center}
-.mnav-links a{font-size:14px;color:var(--g4);text-decoration:none}
-.mnav-links a:hover{color:var(--blk)}
-.mcta{background:var(--blk);color:var(--wht)!important;padding:8px 20px;border-radius:100px;font-size:14px;font-weight:500;border:none;cursor:pointer;font-family:'Geist',sans-serif}
-.mcta:hover{opacity:.8}
-.mhero{max-width:960px;margin:0 auto;padding:96px 48px 72px;text-align:center}
-.meyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--grnl);color:var(--grn);font-size:13px;font-weight:500;padding:5px 14px;border-radius:100px;margin-bottom:28px}
-.meyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grn);display:inline-block}
-.mtitle{font-family:'Instrument Serif',serif;font-size:clamp(48px,7vw,80px);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--blk);margin-bottom:20px}
-.mtitle em{font-style:italic;color:var(--g4)}
-.msub{font-size:18px;font-weight:300;color:var(--g4);max-width:500px;margin:0 auto 40px;line-height:1.7}
-.mactions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.mbtn{background:var(--blk);color:var(--wht);padding:14px 28px;border-radius:100px;font-size:15px;font-weight:500;font-family:'Geist',sans-serif;border:none;cursor:pointer;transition:opacity .15s}
-.mbtn:hover{opacity:.75}
-.mbtn2{background:transparent;color:var(--blk);padding:14px 28px;border-radius:100px;font-size:15px;font-family:'Geist',sans-serif;border:1px solid var(--g2);cursor:pointer;transition:background .15s;text-decoration:none;display:inline-block}
-.mbtn2:hover{background:var(--g1)}
-
-/* MOCKUP */
-.mpreview{max-width:1100px;margin:0 auto 80px;padding:0 48px}
-.mwin{background:#0f0f18;border-radius:16px;overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;padding:28px}
-.mwinnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.mwinlogo{font-family:'Instrument Serif',serif;font-size:18px;color:#fafaf8}
-.mwinsearch{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,.35);font-family:'Geist',sans-serif}
-.mwinchips{display:flex;gap:6px;margin-bottom:20px}
-.mwchip{padding:4px 12px;border-radius:100px;font-size:11px;font-weight:500;border:1px solid;font-family:'Geist',sans-serif}
-.mwchip.on{background:rgba(0,245,255,.1);border-color:rgba(0,245,255,.4);color:#00f5ff}
-.mwchip.off{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.35)}
-.mwcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1}
-.mwcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px}
-.mwgenre{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-family:'Geist',sans-serif}
-.mwtitle{font-family:'Instrument Serif',serif;font-size:15px;color:#fafaf8;margin-bottom:3px}
-.mwsub{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:8px;font-family:'Geist',sans-serif}
-.mwblurb{font-size:10px;color:rgba(255,255,255,.4);line-height:1.5;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);font-family:'Geist',sans-serif}
-
-/* SECTIONS */
-.mdiv{height:1px;background:var(--g2);max-width:1100px;margin:0 auto}
-.msec{max-width:1100px;margin:0 auto;padding:72px 48px}
-.mslabel{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);margin-bottom:12px}
-.mstitle{font-family:'Instrument Serif',serif;font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--blk);margin-bottom:14px}
-.mssub{font-size:16px;font-weight:300;color:var(--g4);max-width:480px;line-height:1.7;margin-bottom:48px}
-.msteps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.mstep{padding:26px;background:var(--g1);border-radius:14px}
-.mstepn{font-size:12px;font-weight:500;color:var(--g3);margin-bottom:10px}
-.mstept{font-size:17px;font-weight:500;color:var(--blk);margin-bottom:8px;line-height:1.3}
-.mstepd{font-size:14px;font-weight:300;color:var(--g4);line-height:1.7}
-.mfgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--g2);border-radius:14px;overflow:hidden}
-.mfeat{background:var(--wht);padding:32px}
-.mficon{font-size:20px;margin-bottom:12px}
-.mft{font-size:16px;font-weight:500;color:var(--blk);margin-bottom:8px}
-.mfd{font-size:14px;font-weight:300;color:var(--g4);line-height:1.7}
-.mmkt{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.mstats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.mstat{padding:22px;border:1px solid var(--g2);border-radius:14px}
-.mstatn{font-family:'Instrument Serif',serif;font-size:38px;font-weight:400;color:var(--blk);line-height:1;margin-bottom:6px}
-.mstatl{font-size:13px;font-weight:300;color:var(--g4);line-height:1.5}
-
-/* WAITLIST */
-.mwl{background:var(--blk);padding:96px 48px;text-align:center}
-.mwli{max-width:560px;margin:0 auto}
-.mwlt{font-family:'Instrument Serif',serif;font-size:clamp(34px,5vw,56px);font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--wht);margin-bottom:14px}
-.mwlt em{font-style:italic;color:rgba(255,255,255,.3)}
-.mwls{font-size:16px;font-weight:300;color:rgba(255,255,255,.4);margin-bottom:36px;line-height:1.7}
-.mwlf{display:flex;gap:10px;max-width:400px;margin:0 auto 12px}
-.mwlinput{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:12px 20px;font-family:'Geist',sans-serif;font-size:15px;color:var(--wht);outline:none}
-.mwlinput::placeholder{color:rgba(255,255,255,.25)}
-.mwlbtn{background:var(--wht);color:var(--blk);border:none;border-radius:100px;padding:12px 22px;font-family:'Geist',sans-serif;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
-.mwlbtn:hover{opacity:.85}
-.mwlnote{font-size:12px;color:rgba(255,255,255,.2)}
-.mwlok{display:none;font-size:14px;color:#74c69d;margin-top:14px}
-.mwlok.on{display:block}
-.mfoot{display:flex;align-items:center;justify-content:space-between;padding:24px 48px;border-top:1px solid var(--g2)}
-.mfootlogo{font-family:'Instrument Serif',serif;font-size:18px;color:var(--blk)}
-.mfootcopy{font-size:13px;color:var(--g3)}
-
-/* ─── APP ─── */
-#app{background:#080810;min-height:100vh;color:#e8e8f0}
-.anav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:56px;background:rgba(8,8,16,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
-.alogo{font-family:'Instrument Serif',serif;font-size:22px;color:#fafaf8;cursor:pointer}
-.anavr{display:flex;gap:10px;align-items:center}
-.asavedbtn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:500;color:rgba(255,255,255,.5);cursor:pointer;transition:all .15s;font-family:'Geist',sans-serif}
-.asavedbtn:hover,.asavedbtn.on{background:rgba(255,213,10,.1);color:#ffd60a;border-color:rgba(255,213,10,.3)}
-.abadge{background:#ffd60a;color:#080810;font-size:11px;font-weight:600;border-radius:100px;padding:1px 7px}
-.abackbtn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:6px 16px;font-size:13px;color:rgba(255,255,255,.5);cursor:pointer;transition:all .15s;font-family:'Geist',sans-serif}
-.abackbtn:hover{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8)}
-.ahero{text-align:center;padding:64px 24px 44px;position:relative;overflow:hidden}
-.ahero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(0,245,255,.05) 0%,transparent 70%);pointer-events:none}
-.ahtitle{font-family:'Instrument Serif',serif;font-size:clamp(42px,7vw,80px);font-weight:400;line-height:1;letter-spacing:-.02em;color:#fafaf8;margin-bottom:12px}
-.ahtitle em{font-style:italic;color:rgba(255,255,255,.3)}
-.ahsub{font-size:16px;font-weight:300;color:rgba(255,255,255,.35);margin-bottom:36px}
-.aswrap{max-width:540px;margin:0 auto}
-.asbar{display:flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:6px 6px 6px 20px;gap:10px;transition:border-color .2s}
-.asbar:focus-within{border-color:rgba(0,245,255,.3);box-shadow:0 0 0 3px rgba(0,245,255,.05)}
-.asinput{flex:1;background:none;border:none;outline:none;font-family:'Geist',sans-serif;font-size:15px;color:#e8e8f0}
-.asinput::placeholder{color:rgba(255,255,255,.22)}
-.asbtn{background:#fafaf8;color:#080810;border:none;border-radius:10px;padding:10px 22px;font-family:'Geist',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:opacity .15s;white-space:nowrap;display:flex;align-items:center;gap:8px}
-.asbtn:hover{opacity:.85}
-.asbtn:disabled{opacity:.4;cursor:not-allowed}
-.adiv{height:1px;background:rgba(255,255,255,.06);max-width:1100px;margin:0 auto 28px}
-.afilters{max-width:1100px;margin:0 auto;padding:0 24px 28px}
-.aflabel{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:9px}
-.afsec{margin-bottom:14px}
-.achiprow{display:flex;flex-wrap:wrap;gap:7px}
-.achip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 15px;font-size:13px;font-family:'Geist',sans-serif;font-weight:400;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s}
-.achip:hover{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.75)}
-.achip.on{background:var(--cb);border-color:var(--cc);color:var(--cc)}
-.aresults{max-width:1100px;margin:0 auto;padding:0 24px 80px}
-.arhdr{display:flex;align-items:center;margin-bottom:22px}
-.arcount{font-size:13px;color:rgba(255,255,255,.3)}
-.arcount strong{color:#00f5ff}
-.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.acard{position:relative;background:#0d0d1c;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;animation:cin .4s ease both;transition:transform .2s,border-color .2s;--c:#fff}
-.acard:hover{transform:translateY(-3px)}
-@keyframes cin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.acimg{height:150px;background-size:cover;background-position:center;position:relative}
-.acimgf{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#0d0d1c 100%)}
-.acbody{padding:16px}
-.actop{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
-.acgenre{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;border:1px solid}
-.acright{display:flex;gap:7px;align-items:center}
-.acprice{font-size:12px;font-weight:500;color:rgba(255,255,255,.45);background:rgba(255,255,255,.07);padding:3px 10px;border-radius:100px}
-.acprice.free{color:#74c69d;background:rgba(116,198,157,.12)}
-.acsave{background:none;border:none;font-size:17px;cursor:pointer;color:rgba(255,255,255,.22);transition:color .15s;line-height:1;padding:0 2px}
-.acsave:hover{color:#ffd60a}
-.acsave.on{color:#ffd60a}
-.actitle{font-family:'Instrument Serif',serif;font-size:21px;font-weight:400;color:#fafaf8;margin-bottom:3px;line-height:1.2}
-.acvenue{font-size:12px;color:rgba(255,255,255,.32);margin-bottom:4px}
-.acdate{font-size:12px;color:rgba(255,255,255,.32);margin-bottom:10px}
-.acblurb{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;padding:9px 0;border-top:1px solid rgba(255,255,255,.06);margin-bottom:10px}
-.acblurbl{color:rgba(255,255,255,.18);animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-.accta{display:inline-block;font-size:13px;font-weight:500;text-decoration:none;padding:7px 16px;border-radius:100px;border:1px solid;transition:background .15s;color:inherit}
-.accta:hover{background:rgba(255,255,255,.06)}
-.acglow{position:absolute;bottom:-30px;right:-30px;width:90px;height:90px;border-radius:50%;opacity:.05;filter:blur(20px);pointer-events:none}
-.almbtn{display:block;margin:32px auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:11px 30px;font-family:'Geist',sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,.45);cursor:pointer;transition:all .15s}
-.almbtn:hover{background:rgba(255,255,255,.09);color:rgba(255,255,255,.75)}
-.astate{text-align:center;padding:80px 24px}
-.asticon{font-size:44px;margin-bottom:14px;display:block}
-.astate h2{font-family:'Instrument Serif',serif;font-size:30px;font-weight:400;color:rgba(255,255,255,.22);margin-bottom:8px}
-.astate p{font-size:14px;font-weight:300;color:rgba(255,255,255,.18)}
-.aerr{background:rgba(255,45,85,.08);border:1px solid rgba(255,45,85,.25);border-radius:12px;padding:14px 20px;color:#ff6b7a;font-size:13px;text-align:center;max-width:500px;margin:0 auto 24px}
-.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(8,8,16,.2);border-top-color:#080810;border-radius:50%;animation:sp .7s linear infinite}
-@keyframes sp{to{transform:rotate(360deg)}}
-
-@media(max-width:768px){
-  .mnav,.anav{padding:0 20px}
-  .mnav-links{display:none}
-  .mhero,.msec,.mpreview{padding-left:24px;padding-right:24px}
-  .msteps,.mfgrid,.mmkt,.mwcards,.agrid{grid-template-columns:1fr}
-  .mstats{grid-template-columns:1fr 1fr}
-  .mwlf{flex-direction:column}
-  .mwl,.mhero{padding:60px 24px}
-  .mfoot{padding:20px 24px;flex-direction:column;gap:8px;text-align:center}
-}
-</style>
-</head>
-<body>
-
-<!-- ══ HOME ══ -->
-<div id="home" class="pg on">
-  <nav class="mnav">
-    <span class="mlogo" onclick="goApp()">Sona</span>
-    <div class="mnav-links">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#market">Why now</a>
-      <button class="mcta" onclick="goApp()">Try the App →</button>
-    </div>
-  </nav>
-
-  <section class="mhero">
-    <div class="meyebrow">Now live</div>
-    <h1 class="mtitle">Music events you'd <em>never</em><br>think to search for.</h1>
-    <p class="msub">Sona surfaces live music around you — from headlining acts to hidden gems — matched to your taste, not just your search.</p>
-    <div class="mactions">
-      <button class="mbtn" onclick="goApp()">Try Sona free →</button>
-      <a class="mbtn2" href="#how">See how it works</a>
-    </div>
-  </section>
-
-  <div class="mpreview">
-    <div class="mwin">
-      <div class="mwinnav">
-        <div class="mwinlogo">Sona</div>
-        <div class="mwinsearch">Oakland, CA</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.25);font-family:'Geist',sans-serif">★ 3 saved</div>
-      </div>
-      <div class="mwinchips">
-        <div class="mwchip on">All</div>
-        <div class="mwchip off">Electronic</div>
-        <div class="mwchip off">Hip-Hop</div>
-        <div class="mwchip off">Jazz</div>
-        <div class="mwchip off">Free only</div>
-      </div>
-      <div class="mwcards">
-        <div class="mwcard"><div class="mwgenre" style="color:#00f5ff">Electronic</div><div class="mwtitle">Boiler Room SF</div><div class="mwsub">The Midway · Apr 5 · 21+</div><div class="mwblurb">✦ An underground set you'll be talking about for months.</div></div>
-        <div class="mwcard"><div class="mwgenre" style="color:#c77dff">Jazz</div><div class="mwtitle">Kamasi Washington</div><div class="mwsub">SFJAZZ · Apr 9 · All Ages</div><div class="mwblurb">✦ If you've never seen live jazz, start here.</div></div>
-        <div class="mwcard"><div class="mwgenre" style="color:#ff6b35">Hip-Hop</div><div class="mwtitle">Free Noon Concert</div><div class="mwsub">Yerba Buena · Apr 11 · Free</div><div class="mwblurb">✦ A rising local act. Free. Bring a blanket.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdiv"></div>
-
-  <section class="msec" id="how">
-    <div class="mslabel">How it works</div>
-    <h2 class="mstitle">Discovery that actually works.</h2>
-    <p class="mssub">Three steps from opening the app to being at a show you'll remember.</p>
-    <div class="msteps">
-      <div class="mstep"><div class="mstepn">01</div><div class="mstept">Tell us where you are</div><div class="mstepd">Enter your city or zip. Sona pulls real upcoming events from Ticketmaster and Eventbrite — tens of thousands of shows, big and small.</div></div>
-      <div class="mstep"><div class="mstepn">02</div><div class="mstept">Filter to your world</div><div class="mstepd">Genre, date range, free vs. ticketed. Narrow it fast — or leave it open and let something surprise you.</div></div>
-      <div class="mstep"><div class="mstepn">03</div><div class="mstept">Get the inside angle</div><div class="mstepd">Every event gets an AI-written discovery tip — not marketing copy, but a genuine reason why you might love it.</div></div>
-    </div>
-  </section>
-
-  <div class="mdiv"></div>
-
-  <section class="msec" id="features">
-    <div class="mslabel">Features</div>
-    <h2 class="mstitle">Built for people who actually go to shows.</h2>
-    <p class="mssub">Every detail designed around the moment you decide to get off the couch.</p>
-    <div class="mfgrid">
-      <div class="mfeat"><div class="mficon">🗺</div><div class="mft">Real event data</div><div class="mfd">Powered by Ticketmaster and Eventbrite — not scraped listings or AI guesses. Actual shows, actual dates.</div></div>
-      <div class="mfeat"><div class="mficon">✦</div><div class="mft">AI discovery blurbs</div><div class="mfd">Each event gets a one-sentence tip — like a recommendation from a friend who goes to everything.</div></div>
-      <div class="mfeat"><div class="mficon">★</div><div class="mft">Save &amp; revisit</div><div class="mfd">Bookmark events you want to attend. Your list persists so nothing slips through the cracks.</div></div>
-      <div class="mfeat"><div class="mficon">🎚</div><div class="mft">Smart filters</div><div class="mfd">Genre, date range, free vs. ticketed — all in one place. Filter combinations that actually make sense.</div></div>
-    </div>
-  </section>
-
-  <div class="mdiv"></div>
-
-  <section class="msec" id="market">
-    <div class="mmkt">
-      <div>
-        <div class="mslabel">Why now</div>
-        <h2 class="mstitle">A $30B market with a discovery problem.</h2>
-        <p class="mssub">Ticketmaster sells tickets. Spotify knows what you listen to. Nobody has connected the two in a way that surfaces the show you didn't know to look for. That's the gap Sona fills.</p>
-        <button class="mbtn" onclick="goApp()" style="margin-top:8px">Try it now →</button>
-      </div>
-      <div class="mstats">
-        <div class="mstat"><div class="mstatn">$30B</div><div class="mstatl">Live music industry annually</div></div>
-        <div class="mstat"><div class="mstatn">67%</div><div class="mstatl">Concertgoers discover by word of mouth</div></div>
-        <div class="mstat"><div class="mstatn">500M+</div><div class="mstatl">Events in Ticketmaster's network</div></div>
-        <div class="mstat"><div class="mstatn">0</div><div class="mstatl">Apps doing taste-based discovery well</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mwl" id="waitlist">
-    <div class="mwli">
-      <h2 class="mwlt">Be first to<br><em>find your next show.</em></h2>
-      <p class="mwls">Join the waitlist and we'll reach out when new features drop.</p>
-      <div class="mwlf">
-        <input class="mwlinput" type="email" placeholder="your@email.com" id="wlemail"/>
-        <button class="mwlbtn" onclick="joinWL()">Join waitlist</button>
-      </div>
-      <div class="mwlnote">No spam. Ever.</div>
-      <div class="mwlok" id="wlok">✓ You're on the list.</div>
-    </div>
-  </section>
-
-  <footer class="mfoot">
-    <div class="mfootlogo">Sona</div>
-    <div class="mfootcopy">© 2026 Sona. Music discovery, reimagined.</div>
-  </footer>
-</div>
-
-<!-- ══ APP ══ -->
-<div id="app" class="pg">
-  <nav class="anav">
-    <span class="alogo" onclick="goHome()">Sona</span>
-    <div class="anavr">
-      <button id="spotifybtn" class="spotify-btn" onclick="connectSpotify()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste</button>
-            <div id="savedbtn" class="asavedbtn" onclick="toggleSaved()">★ Saved</div>
-      <button class="abackbtn" onclick="goHome()">← Back</button>
-    </div>
-  </nav>
-  <div class="ahero">
-    <h1 class="ahtitle">Find your<br><em>next obsession.</em></h1>
-    <p class="ahsub">Real shows. Hidden gems. Matched to your taste.</p>
-    <div class="aswrap">
-      <div class="asbar">
-        <span style="font-size:15px;opacity:.3">📍</span>
-        <input id="locinput" class="asinput" placeholder="City, zip code, or artist..." onkeydown="if(event.key==='Enter')search(0)"/>
-        <button id="searchbtn" class="asbtn" onclick="search(0)">Discover →</button>
-      </div>
-    </div>
-  </div>
-  <div id="filterwrap" style="display:none">
-    <div class="adiv"></div>
-    <div class="afilters">
-      <div class="afsec"><div class="aflabel">Genre</div><div class="achiprow" id="gchips"></div></div>
-      <div class="afsec"><div class="aflabel">When</div><div class="achiprow" id="dchips"></div></div>
-      <div class="afsec"><div class="aflabel">Price</div><div class="achiprow" id="pchips"></div></div>
-    </div>
-  </div>
-  <div id="spotifybar" class="spotify-bar">
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <span class="spotify-label">Matching your taste in:</span>
-    <div id="spotifyartists" class="spotify-artists"></div>
-  </div>
-  <button class="spotify-btn connected" onclick="disconnectSpotify()">✓ Connected — Disconnect</button>
-</div>
-<div class="aresults">
-    <div id="errdiv" class="aerr" style="display:none"></div>
-    <div id="rhdrdiv" class="arhdr" style="display:none"><p class="arcount" id="rcountdiv"></p></div>
-    <div id="griddiv" class="agrid"></div>
-    <div id="statediv" class="astate"><span class="asticon">🎸</span><h2>Enter a city to get started</h2><p>We'll find real upcoming shows near you</p></div>
-    <button id="lmbtn" class="almbtn" style="display:none" onclick="search(ST.page+1)">Load more shows</button>
-  </div>
-</div>
-
-<script>
-const TM = "wp7PBd9mOkqeqJlDpT9VzP5pnowABkit";
-const EB = "G3HY2EY5QNL4GFIDK6QP";
-
-const GENRES = ["All","Rock","Hip-Hop","Electronic","Jazz & Blues","Pop","R&B","Country","Classical","Latin","Metal","Indie","Folk"];
-const GID = {"Rock":"KnvZfZ7vAeA","Hip-Hop":"KnvZfZ7vAv1","Electronic":"KnvZfZ7vAvF","Jazz & Blues":"KnvZfZ7vAvd","Pop":"KnvZfZ7vAev","R&B":"KnvZfZ7vAee","Country":"KnvZfZ7vAv6","Classical":"KnvZfZ7vAeJ","Latin":"KnvZfZ7vAe6","Metal":"KnvZfZ7vAvt","Indie":"KnvZfZ7vAed","Folk":"KnvZfZ7vAvU"};
-const GC = {"Rock":"#ff2d55","Hip-Hop":"#ff6b35","Electronic":"#00f5ff","Jazz & Blues":"#c77dff","Pop":"#ff85e1","R&B":"#ffd60a","Country":"#a8e063","Classical":"#e2d1c3","Latin":"#ff6b6b","Metal":"#adb5bd","Indie":"#74c69d","Folk":"#d4a373","All":"#ffffff","Local & Independent":"#ff9800","Music":"#ffffff"};
-const DATES = [{l:"This Week",d:7},{l:"This Month",d:30},{l:"3 Months",d:90},{l:"Any Time",d:365}];
-
-var ST = {
-  genre:"All", dateIdx:1, price:"All",
-  events:[], page:0, hasMore:false,
-  searched:false, showSaved:false,
-  saved: (function(){ try{ return JSON.parse(localStorage.getItem("sona_saved")||"[]"); }catch(e){ return []; } })()
-};
-
-function saveSaved(){ try{ localStorage.setItem("sona_saved",JSON.stringify(ST.saved)); }catch(e){} }
-
-function goApp(){
-  document.getElementById("home").className = "pg";
-  document.getElementById("app").className = "pg on";
-  window.scrollTo(0,0);
-  buildFilters();
-  updateSavedBtn();
-}
-
-function goHome(){
-  document.getElementById("app").className = "pg";
-  document.getElementById("home").className = "pg on";
-  window.scrollTo(0,0);
-}
-
-function buildFilters(){
-  var gc = document.getElementById("gchips");
-  var dc = document.getElementById("dchips");
-  var pc = document.getElementById("pchips");
-  if(!gc||!dc||!pc) return;
-  gc.innerHTML = GENRES.map(function(g){ var c=GC[g]||"#fff"; return '<button class="achip'+(ST.genre===g?" on":"")+'" style="--cc:'+c+';--cb:'+c+'22" onclick="ST.genre=\''+g+'\';buildFilters()">'+g+'</button>'; }).join("");
-  dc.innerHTML = DATES.map(function(o,i){ return '<button class="achip'+(ST.dateIdx===i?" on":"")+'" style="--cc:#00f5ff;--cb:#00f5ff22" onclick="ST.dateIdx='+i+';buildFilters()">'+o.l+'</button>'; }).join("");
-  pc.innerHTML = ["All","Ticketed","Free"].map(function(p){ return '<button class="achip'+(ST.price===p?" on":"")+'" style="--cc:#74c69d;--cb:#74c69d22" onclick="ST.price=\''+p+'\';renderEvents()">'+p+'</button>'; }).join("");
-}
-
-function normalizeEB(ev){
-  var v=ev.venue||{}, start=ev.start||{}, isFree=ev.is_free;
-  var minP=ev.ticket_availability&&ev.ticket_availability.minimum_ticket_price&&ev.ticket_availability.minimum_ticket_price.major_value;
-  var maxP=ev.ticket_availability&&ev.ticket_availability.maximum_ticket_price&&ev.ticket_availability.maximum_ticket_price.major_value;
-  return {
-    id:"eb_"+ev.id, name:(ev.name&&ev.name.text)||"Untitled Event", source:"eventbrite", url:ev.url,
-    images: ev.logo&&ev.logo.url ? [{ratio:"16_9",width:600,url:ev.logo.url}] : [],
-    dates:{start:{localDate:start.local&&start.local.split("T")[0], localTime:start.local&&start.local.split("T")[1]}},
-    priceRanges: (!isFree&&minP) ? [{min:parseFloat(minP),max:parseFloat(maxP||minP)}] : null,
-    isFree:isFree,
-    classifications:[{genre:{name:"Local & Independent"},segment:{name:"Music"}}],
-    _embedded:{venues:[{name:v.name||"Venue TBA",city:{name:v.city||""},stateCode:v.region||""}]}
-  };
-}
-
-function getPrice(e){
-  if(e.isFree) return null;
-  var p=e.priceRanges&&e.priceRanges[0];
-  if(!p) return null;
-  return p.min===p.max ? "$"+Math.round(p.min) : "$"+Math.round(p.min)+"–$"+Math.round(p.max);
-}
-function getVenue(e){ return (e._embedded&&e._embedded.venues&&e._embedded.venues[0]&&e._embedded.venues[0].name)||"Venue TBA"; }
-function getCity(e){ var v=e._embedded&&e._embedded.venues&&e._embedded.venues[0]; return v?[v.city&&v.city.name,v.stateCode].filter(Boolean).join(", "):""; }
-function getImg(e){ var imgs=e.images||[]; var i=imgs.find(function(i){ return i.ratio==="16_9"&&i.width>500; })||imgs[0]; return i&&i.url||null; }
-function getGenre(e){ return (e.classifications&&e.classifications[0]&&(e.classifications[0].genre&&e.classifications[0].genre.name||e.classifications[0].segment&&e.classifications[0].segment.name))||"Music"; }
-function getColor(e){ var g=getGenre(e); for(var k in GC){ if(g.toLowerCase().indexOf(k.toLowerCase())>=0) return GC[k]; } return "#ffffff"; }
-function fmtDate(s){ if(!s) return "TBA"; try{ return new Date(s+"T12:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"}); }catch(e){ return s; } }
-function fmtTime(s){ if(!s) return null; try{ return new Date("1970-01-01T"+s).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"}); }catch(e){ return null; } }
-function getURL(e){
-  if(!e.url) return null;
-  try{ var u=new URL(e.url); var dest=u.searchParams.get("u"); return dest?decodeURIComponent(dest):e.url; }catch(ex){ return e.url; }
-}
-
-async function search(p){
-  var loc = document.getElementById("locinput").value.trim();
-  if(!loc){ document.getElementById("locinput").focus(); return; }
-  if(p===0){ ST.events=[]; ST.showSaved=false; updateSavedBtn(); }
-  ST.searched=true;
-  setBtnLoading(true);
-  document.getElementById("errdiv").style.display="none";
-
-  var now=new Date(), end=new Date();
-  end.setDate(end.getDate()+DATES[ST.dateIdx].d);
-  function fmt(d){ return d.toISOString().split(".")[0]+"Z"; }
-
-  var tp=new URLSearchParams({apikey:TM,keyword:loc,classificationName:"music",startDateTime:fmt(now),endDateTime:fmt(end),sort:"date,asc",size:12,page:p});
-  if(ST.genre!=="All"&&GID[ST.genre]) tp.set("genreId",GID[ST.genre]);
-  var ep=new URLSearchParams({token:EB,"location.address":loc,"location.within":"50mi","categories":"103","start_date.range_start":fmt(now),"start_date.range_end":fmt(end),"expand":"venue,ticket_availability","page_size":10});
-
   try{
-    var results = await Promise.allSettled([
-      fetch("https://app.ticketmaster.com/discovery/v2/events.json?"+tp),
-      p===0 ? fetch("https://www.eventbriteapi.com/v3/events/search/?"+ep) : Promise.resolve(null)
-    ]);
-
-    var tmItems=[], hasMore=false;
-    if(results[0].status==="fulfilled"&&results[0].value.ok){
-      var td=await results[0].value.json();
-      if(!td.fault){ tmItems=td._embedded&&td._embedded.events||[]; hasMore=(p+1)<((td.page&&td.page.totalPages)||0); }
-    }
-
-    var ebItems=[];
-    if(p===0&&results[1].status==="fulfilled"&&results[1].value){
-      try{ var ed=await results[1].value.json(); ebItems=(ed.events||[]).map(normalizeEB); }catch(e){}
-    }
-
-    var merged=[];
-    if(p===0){
-      var max=Math.max(tmItems.length,ebItems.length);
-      for(var i=0;i<max;i++){ if(tmItems[i]) merged.push(tmItems[i]); if(ebItems[i]) merged.push(ebItems[i]); }
-    } else { merged=tmItems; }
-
-    if(p===0) ST.events=merged; else ST.events=ST.events.concat(merged);
-    ST.hasMore=hasMore; ST.page=p;
-    document.getElementById("filterwrap").style.display="block";
-    renderEvents();
-  }catch(e){
-    document.getElementById("errdiv").textContent="⚠️ "+(e.message||"Couldn't load events");
-    document.getElementById("errdiv").style.display="block";
-    showState("🔍","Something went wrong","Check your connection and try again");
-  }
-  setBtnLoading(false);
-}
-
-function renderEvents(){
-  var grid=document.getElementById("griddiv");
-  var hdr=document.getElementById("rhdrdiv");
-  var st=document.getElementById("statediv");
-  var lm=document.getElementById("lmbtn");
-  var rc=document.getElementById("rcountdiv");
-  var loc=document.getElementById("locinput").value.trim();
-
-  var src = ST.showSaved ? ST.saved : ST.events.filter(function(e){
-    if(ST.price==="Free"&&getPrice(e)) return false;
-    if(ST.price==="Ticketed"&&!getPrice(e)) return false;
-    return true;
-  });
-
-  if(src.length===0){
-    grid.innerHTML=""; hdr.style.display="none"; lm.style.display="none";
-    if(ST.showSaved) showState("★","No saved events yet","Star events to save them here");
-    else if(ST.searched) showState("🔍","No events found","Try a broader search or different filters");
-    else showState("🎸","Enter a city to get started","We'll find real upcoming shows near you");
-    return;
-  }
-
-  st.style.display="none"; hdr.style.display="flex";
-  rc.innerHTML = ST.showSaved
-    ? "<strong>"+src.length+"</strong> saved event"+(src.length!==1?"s":"")
-    : "<strong>"+src.length+"</strong> event"+(src.length!==1?"s":"")+" near <strong style='color:#fafaf8'>"+loc+"</strong>";
-
-  grid.innerHTML = src.map(function(ev,i){ return cardHTML(ev,i); }).join("");
-  lm.style.display=(!ST.showSaved&&ST.hasMore)?"block":"none";
-
-  src.forEach(function(ev,i){ setTimeout(function(){ loadBlurb(ev.id,ev); }, i*250+Math.random()*200); });
-}
-
-function cardHTML(ev,idx){
-  var color=getColor(ev), img=getImg(ev), price=getPrice(ev);
-  var date=fmtDate(ev.dates&&ev.dates.start&&ev.dates.start.localDate);
-  var time=fmtTime(ev.dates&&ev.dates.start&&ev.dates.start.localTime);
-  var venue=getVenue(ev), city=getCity(ev), genre=getGenre(ev);
-  var isSaved=!!ST.saved.find(function(s){ return s.id===ev.id; });
-  var url=getURL(ev);
-  var matchTag=isSpotifyMatch(ev)?'<span class="match-badge">♫ YOUR TASTE</span>':""; var ebTag=ev.source==="eventbrite"?'<span style="font-size:9px;font-weight:600;color:rgba(255,152,0,.7);margin-left:4px;letter-spacing:.06em">EVENTBRITE</span>':"";
-  return '<div class="acard" id="card-'+ev.id+'" style="--c:'+color+';animation-delay:'+idx*55+'ms">'
-    +(img?'<div class="acimg" style="background-image:url('+img+')"><div class="acimgf"></div></div>':"")
-    +'<div class="acbody">'
-    +'<div class="actop">'
-    +'<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="acgenre" style="color:'+color+';border-color:'+color+'44;background:'+color+'11">'+genre+'</span>'+ebTag+matchTag+'</div>'
-    +'<div class="acright">'
-    +(price?'<span class="acprice">'+price+'</span>':'<span class="acprice free">Free</span>')
-    +'<button class="acsave'+(isSaved?" on":"")+'" onclick="toggleSave(\''+ev.id+'\')">'+(isSaved?"★":"☆")+'</button>'
-    +'</div></div>'
-    +'<h3 class="actitle">'+ev.name+'</h3>'
-    +'<p class="acvenue">'+venue+(city?" · "+city:"")+'</p>'
-    +'<p class="acdate">📅 '+date+(time?" · "+time:"")+'</p>'
-    +'<div class="acblurb" id="blurb-'+ev.id+'"><span class="acblurbl">✦ loading insight...</span></div>'
-    +(url?'<a class="accta" href="'+url+'" style="border-color:'+color+'44;color:'+color+'">'+(price?"Get Tickets →":"Event Details →")+'</a>':"")
-    +'</div>'
-    +'<div class="acglow" style="background:'+color+'"></div>'
-    +'</div>';
-}
-
-async function loadBlurb(id,ev){
-  var el=document.getElementById("blurb-"+id);
-  if(!el) return;
-  try{
-    var res=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:80,
-        system:"Write ultra-short music event discovery tips. 1-2 sentences. Sound like a music-obsessed friend, not a marketer.",
-        messages:[{role:"user",content:"Discovery tip for: \""+ev.name+"\" ("+getGenre(ev)+") at "+getVenue(ev)+". Why would someone who didn't know about it love it?"}]})
-    });
+    var res=await fetch("https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term",{headers:{"Authorization":"Bearer "+token}});
+    if(res.status===401){var t=await refreshSpotifyToken();if(t){loadSpotifyData(t);return;}disconnectSpotify();return;}
     var data=await res.json();
-    var text=data.content&&data.content[0]&&data.content[0].text;
-    if(text&&document.getElementById("blurb-"+id)) document.getElementById("blurb-"+id).innerHTML="✦ "+text;
-  }catch(e){ var el2=document.getElementById("blurb-"+id); if(el2) el2.innerHTML=""; }
-}
-
-function toggleSave(id){
-  var ev=ST.events.find(function(e){ return e.id===id; })||ST.saved.find(function(e){ return e.id===id; });
-  if(!ev) return;
-  var exists=!!ST.saved.find(function(e){ return e.id===id; });
-  ST.saved=exists?ST.saved.filter(function(e){ return e.id!==id; }):ST.saved.concat([ev]);
-  saveSaved(); updateSavedBtn();
-  var btn=document.querySelector("#card-"+id+" .acsave");
-  if(btn){ btn.textContent=exists?"☆":"★"; if(exists) btn.classList.remove("on"); else btn.classList.add("on"); }
-  if(ST.showSaved) renderEvents();
-}
-
-function toggleSaved(){ ST.showSaved=!ST.showSaved; updateSavedBtn(); renderEvents(); }
-
-function updateSavedBtn(){
-  var btn=document.getElementById("savedbtn"); if(!btn) return;
-  var c=ST.saved.length;
-  btn.className="asavedbtn"+(ST.showSaved?" on":"");
-  btn.innerHTML="★ Saved"+(c>0?' <span class="abadge">'+c+"</span>":"");
-}
-
-function showState(icon,title,sub){
-  var st=document.getElementById("statediv"); if(!st) return;
-  st.style.display="block";
-  st.innerHTML='<span class="asticon">'+icon+'</span><h2>'+title+'</h2><p>'+sub+'</p>';
-  document.getElementById("griddiv").innerHTML="";
-  document.getElementById("rhdrdiv").style.display="none";
-  document.getElementById("lmbtn").style.display="none";
-}
-
-function setBtnLoading(on){
-  var btn=document.getElementById("searchbtn"); if(!btn) return;
-  btn.disabled=on;
-  btn.innerHTML=on?'<span class="spin"></span>':"Discover →";
-}
-
-function joinWL(){
-  var inp=document.getElementById("wlemail");
-  var ok=document.getElementById("wlok");
-  if(!inp.value||inp.value.indexOf("@")<0){ inp.style.borderColor="rgba(255,80,80,.5)"; setTimeout(function(){ inp.style.borderColor=""; },1000); return; }
-  document.querySelector(".mwlf").style.display="none";
-  ok.className="mwlok on";
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener("click",function(e){
-    var t=document.querySelector(a.getAttribute("href"));
-    if(t){ e.preventDefault(); t.scrollIntoView({behavior:"smooth"}); }
-  });
-});
-
-/* ── SPOTIFY ── */
-var SP_CLIENT = "079cf217cba04451a63f0b846dbe59d2";
-var SP_REDIRECT = "https://trysona.to/";
-var SP_SCOPES = "user-top-read";
-var spToken = localStorage.getItem("sp_token") || null;
-var spArtists = [];
-var spGenres = [];
-
-function connectSpotify(){
-  var state = Math.random().toString(36).substring(2);
-  localStorage.setItem("sp_state", state);
-  var verifier = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
-  localStorage.setItem("sp_verifier", verifier);
-  var url = "https://accounts.spotify.com/authorize"
-    + "?client_id=" + SP_CLIENT
-    + "&response_type=code"
-    + "&redirect_uri=" + encodeURIComponent(SP_REDIRECT)
-    + "&scope=" + encodeURIComponent(SP_SCOPES)
-    + "&state=" + state;
-  window.location.href = url;
-}
-
-function disconnectSpotify(){
-  localStorage.removeItem("sp_token");
-  localStorage.removeItem("sp_artists");
-  localStorage.removeItem("sp_genres");
-  spToken = null; spArtists = []; spGenres = [];
-  document.getElementById("spotifybar").className = "spotify-bar";
-  updateSpotifyBtn(false);
-  if(ST.searched) renderEvents();
-}
-
-function updateSpotifyBtn(connected){
-  var btn = document.getElementById("spotifybtn");
-  if(!btn) return;
-  if(connected){
-    btn.innerHTML = "✓ Taste matched";
-    btn.className = "spotify-btn connected";
-  } else {
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Match My Taste';
-    btn.className = "spotify-btn";
-  }
-}
-
-async function loadSpotifyData(token){
-  try {
-    var res = await fetch("https://api.spotify.com/v1/me/top/artists?limit=10&time_range=medium_term", {
-      headers: { "Authorization": "Bearer " + token }
-    });
-    if(!res.ok) throw new Error("Spotify auth failed");
-    var data = await res.json();
-    var artists = data.items.map(function(a){ return a.name.toLowerCase(); });
-    var genres = [];
-    data.items.forEach(function(a){ a.genres.forEach(function(g){ if(genres.indexOf(g)<0) genres.push(g); }); });
-    spArtists = artists;
-    spGenres = genres;
-    localStorage.setItem("sp_artists", JSON.stringify(artists));
-    localStorage.setItem("sp_genres", JSON.stringify(genres));
-    showSpotifyBar(data.items.slice(0,5).map(function(a){ return a.name; }));
+    var artists=data.items.map(function(a){return a.name.toLowerCase();});
+    var genres=[];data.items.forEach(function(a){a.genres.forEach(function(g){if(genres.indexOf(g)<0)genres.push(g);});});
+    spArtists=artists;spGenres=genres;
+    localStorage.setItem("sp_artists",JSON.stringify(artists));localStorage.setItem("sp_genres",JSON.stringify(genres));
+    var bar=document.getElementById("spotifybar"),ac=document.getElementById("spotifyartists");
+    if(bar&&ac){bar.className="spotify-bar on";ac.innerHTML=data.items.slice(0,5).map(function(a){return'<span class="spotify-artist">'+a.name+'</span>';}).join("");}
     updateSpotifyBtn(true);
-    if(ST.searched) renderEvents();
-  } catch(e) {
-    console.error("Spotify error:", e);
-    disconnectSpotify();
-  }
+    if(ST.searched)renderEvents();
+  }catch(e){console.error("Spotify error:",e);disconnectSpotify();}
 }
-
-function showSpotifyBar(artists){
-  var bar = document.getElementById("spotifybar");
-  var ac = document.getElementById("spotifyartists");
-  bar.className = "spotify-bar on";
-  ac.innerHTML = artists.map(function(a){ return '<span class="spotify-artist">'+a+'</span>'; }).join("");
-}
-
 function isSpotifyMatch(ev){
-  if(!spArtists.length && !spGenres.length) return false;
-  var name = (ev.name||"").toLowerCase();
-  var genre = getGenre(ev).toLowerCase();
-  for(var i=0;i<spArtists.length;i++){ if(name.indexOf(spArtists[i])>=0 || spArtists[i].indexOf(name)>=0) return true; }
-  for(var j=0;j<spGenres.length;j++){ if(genre.indexOf(spGenres[j])>=0 || spGenres[j].indexOf(genre)>=0) return true; }
+  if(!spArtists.length&&!spGenres.length)return false;
+  var name=(ev.name||"").toLowerCase(),genre=getGenre(ev).toLowerCase();
+  for(var i=0;i<spArtists.length;i++){if(name.indexOf(spArtists[i])>=0||spArtists[i].indexOf(name)>=0)return true;}
+  for(var j=0;j<spGenres.length;j++){if(genre.indexOf(spGenres[j])>=0||spGenres[j].indexOf(genre)>=0)return true;}
   return false;
 }
-
-// Handle Spotify OAuth callback
-(function(){
-  var urlParams = new URLSearchParams(window.location.search);
-  var code = urlParams.get("code");
+(async function(){
+  var params=new URLSearchParams(window.location.search),code=params.get("code");
   if(code){
-    window.history.replaceState({}, document.title, window.location.pathname);
-    fetch("https://accounts.spotify.com/api/token", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        grant_type: "authorization_code",
-        code: code,
-        redirect_uri: SP_REDIRECT,
-        client_id: SP_CLIENT,
-        client_secret: "2b9e9fac500c4938a41e5ad36cc70b92"
-      })
-    }).then(function(r){ return r.json(); }).then(function(data){
-      if(data.access_token){
-        spToken = data.access_token;
-        localStorage.setItem("sp_token", spToken);
-        goApp();
-        loadSpotifyData(spToken);
-      }
-    }).catch(function(e){ console.error("Spotify token error", e); });
-  } else if(localStorage.getItem("sp_token")){
-    spToken = localStorage.getItem("sp_token");
-    spArtists = JSON.parse(localStorage.getItem("sp_artists")||"[]");
-    spGenres = JSON.parse(localStorage.getItem("sp_genres")||"[]");
+    window.history.replaceState({},document.title,window.location.pathname);
+    var verifier=localStorage.getItem("sp_verifier");
+    try{
+      var r=await fetch("https://accounts.spotify.com/api/token",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams({grant_type:"authorization_code",code:code,redirect_uri:SP_REDIRECT,client_id:SP_CLIENT,code_verifier:verifier})});
+      var d=await r.json();
+      if(d.access_token){spToken=d.access_token;localStorage.setItem("sp_token",spToken);if(d.refresh_token)localStorage.setItem("sp_refresh",d.refresh_token);goApp();loadSpotifyData(spToken);}
+    }catch(e){console.error("Token error:",e);}
+  }else if(localStorage.getItem("sp_token")){
+    spToken=localStorage.getItem("sp_token");
+    spArtists=JSON.parse(localStorage.getItem("sp_artists")||"[]");
+    spGenres=JSON.parse(localStorage.getItem("sp_genres")||"[]");
     if(spArtists.length){
-      var names = spArtists.slice(0,5).map(function(a){ return a.charAt(0).toUpperCase()+a.slice(1); });
-      showSpotifyBar(names);
+      var bar=document.getElementById("spotifybar"),ac=document.getElementById("spotifyartists");
+      if(bar&&ac){bar.className="spotify-bar on";ac.innerHTML=spArtists.slice(0,5).map(function(a){return'<span class="spotify-artist">'+a.charAt(0).toUpperCase()+a.slice(1)+'</span>';}).join("");}
       updateSpotifyBtn(true);
     }
   }
 })();
-
 </script>
 </body>
 </html>
