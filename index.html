@@ -606,9 +606,11 @@ var spGenres = [];
 function connectSpotify(){
   var state = Math.random().toString(36).substring(2);
   localStorage.setItem("sp_state", state);
+  var verifier = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
+  localStorage.setItem("sp_verifier", verifier);
   var url = "https://accounts.spotify.com/authorize"
     + "?client_id=" + SP_CLIENT
-    + "&response_type=token"
+    + "&response_type=code"
     + "&redirect_uri=" + encodeURIComponent(SP_REDIRECT)
     + "&scope=" + encodeURIComponent(SP_SCOPES)
     + "&state=" + state;
@@ -668,17 +670,28 @@ function isSpotifyMatch(ev){
 
 // Handle Spotify OAuth callback
 (function(){
-  var hash = window.location.hash;
-  if(hash && hash.indexOf("access_token")>=0){
-    var params = {};
-    hash.substring(1).split("&").forEach(function(p){ var kv=p.split("="); params[kv[0]]=kv[1]; });
-    if(params.access_token){
-      spToken = params.access_token;
-      localStorage.setItem("sp_token", spToken);
-      window.location.hash = "";
-      goApp();
-      loadSpotifyData(spToken);
-    }
+  var urlParams = new URLSearchParams(window.location.search);
+  var code = urlParams.get("code");
+  if(code){
+    window.history.replaceState({}, document.title, window.location.pathname);
+    fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "authorization_code",
+        code: code,
+        redirect_uri: SP_REDIRECT,
+        client_id: SP_CLIENT,
+        client_secret: "2b9e9fac500c4938a41e5ad36cc70b92"
+      })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if(data.access_token){
+        spToken = data.access_token;
+        localStorage.setItem("sp_token", spToken);
+        goApp();
+        loadSpotifyData(spToken);
+      }
+    }).catch(function(e){ console.error("Spotify token error", e); });
   } else if(localStorage.getItem("sp_token")){
     spToken = localStorage.getItem("sp_token");
     spArtists = JSON.parse(localStorage.getItem("sp_artists")||"[]");
