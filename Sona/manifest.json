@@ -2,7 +2,7 @@
   "name": "Sona — Music Discovery",
   "short_name": "Sona",
   "description": "Discover music events you'd never think to search for.",
-  "start_url": "/Sona/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#080810",
   "theme_color": "#080810",
