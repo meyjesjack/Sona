@@ -316,6 +316,7 @@ body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
       <div class="asbar">
         <span style="font-size:14px;opacity:.3">📍</span>
         <input id="locinput" class="asinput" placeholder="City, zip code, or artist..." onkeydown="if(event.key==='Enter')doSearch(0)"/>
+        <button id="nearbtn" class="asbtn" onclick="nearMe()" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.15);padding:10px 14px;margin-right:4px;" title="Use my location">📍</button>
         <button id="searchbtn" class="asbtn" onclick="doSearch(0)">Discover →</button>
       </div>
     </div>
@@ -689,6 +690,46 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
     if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}
   });
 });
+
+// ── NEAR ME ──
+function nearMe(){
+  var btn = document.getElementById("nearbtn");
+  if(!btn) return;
+  btn.innerHTML = "⏳";
+  btn.disabled = true;
+  if(!navigator.geolocation){
+    btn.innerHTML = "📍";
+    btn.disabled = false;
+    alert("Location not supported by your browser.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    async function(pos){
+      try{
+        var lat = pos.coords.latitude, lng = pos.coords.longitude;
+        var res = await fetch("https://nominatim.openstreetmap.org/reverse?lat="+lat+"&lon="+lng+"&format=json");
+        var data = await res.json();
+        var city = data.address && (data.address.city || data.address.town || data.address.village || data.address.county);
+        var state = data.address && data.address.state_code;
+        if(city){
+          var loc = city + (state ? ", "+state : "");
+          document.getElementById("locinput").value = loc;
+          doSearch(0);
+        }
+      }catch(e){
+        alert("Couldn't detect your location. Try typing your city.");
+      }
+      btn.innerHTML = "📍";
+      btn.disabled = false;
+    },
+    function(err){
+      btn.innerHTML = "📍";
+      btn.disabled = false;
+      alert("Location access denied. Please type your city.");
+    },
+    {timeout:8000}
+  );
+}
 
 // ── SPOTIFY PKCE ──
 function b64url(buf){ return btoa(String.fromCharCode.apply(null,new Uint8Array(buf))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }
