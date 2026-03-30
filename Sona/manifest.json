@@ -1,0 +1,22 @@
+{
+  "name": "Sona — Music Discovery",
+  "short_name": "Sona",
+  "description": "Discover music events you'd never think to search for.",
+  "start_url": "/Sona/",
+  "display": "standalone",
+  "background_color": "#080810",
+  "theme_color": "#080810",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/080810/00f5ff?text=S",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/080810/00f5ff?text=S",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
