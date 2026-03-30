@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sona — Music Discovery</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="manifest" href="/Sona/manifest.json">
+<meta name="theme-color" content="#080810">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sona">
+<link rel="apple-touch-icon" href="https://via.placeholder.com/192x192/080810/00f5ff?text=S">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -830,6 +836,17 @@ async function loadSpotifyData(token){
     }
   }
 })();
+</script>
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load", function(){
+    navigator.serviceWorker.register("/Sona/sw.js").then(function(reg){
+      console.log("SW registered");
+    }).catch(function(e){
+      console.log("SW error:", e);
+    });
+  });
+}
 </script>
 </body>
 </html>
